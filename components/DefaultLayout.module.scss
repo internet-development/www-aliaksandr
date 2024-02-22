@@ -10,3 +10,17 @@
   width: 1px;
   height: 1px;
 }
+
+.blockGap {
+  display: grid;
+  background-color: black;
+  row-gap: 4rem;
+
+  @media (max-width: 1200px) {
+    row-gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    row-gap: 3rem;
+  }
+}

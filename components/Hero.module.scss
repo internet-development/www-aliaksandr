@@ -1,0 +1,60 @@
+.heroContainer {
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+.heroSection {
+    font-family: "SpaceGroteskBold", sans-serif;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @media (max-width: 2080px) {
+        height: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    @media (max-width: 1920px) {
+        height: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    @media (max-width: 1600px) {
+        height: 90vh;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    @media (max-width: 1050px) {
+        height: 100%;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+    }
+}
+
+.mainHeroTitle {
+    padding-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 121px;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    font-size: 40px;
+    font-style: italic;
+}

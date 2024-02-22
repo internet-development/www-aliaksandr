@@ -1,0 +1,22 @@
+.submitContainer {
+    display: flex;
+    gap: 10%;
+    margin-top: 10%;
+}
+
+.submit {
+    border: 1px solid;
+    border-color: white;
+    background-color: white;
+    color: black;
+    width: 45%;
+    height: 350px;
+    border-radius: 16px;
+    font-size: 40px;
+    padding: 5%;
+}
+
+.follow {
+    color: white;
+    font-size: 40px;
+}
