@@ -4,6 +4,15 @@
     position: relative;
     color: white;
 }
+
+.textContainer {
+    font-size: 2rem;
+    font-weight: 4rem;
+    line-height: 1.6;
+    color: white;
+    margin-top: 20px;
+}
+
 .heroSection {
     font-family: "SpaceGroteskBold", sans-serif;
     height: 100%;
@@ -57,4 +66,11 @@
     gap: 5rem;
     font-size: 40px;
     font-style: italic;
+
+    @media (max-width: 1050px) {
+        flex-direction: column;
+        height: 100%;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+    }
 }

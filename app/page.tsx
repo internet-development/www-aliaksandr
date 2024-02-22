@@ -64,13 +64,13 @@ export default async function Page(props) {
   return (
     <div>
       <Navbar navigation={navigation} />
+      <Hero />
+      <About />
+      <Investments />
       <div className={styles.blockGap}>
-        <Hero />
-        <About />
-        <Investments />
         <Submit />
-        <Footer navigation={footer} />
       </div>
+      <Footer navigation={footer} />
     </div>
   );
 }
