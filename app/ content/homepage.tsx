@@ -13,12 +13,14 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       text: 'Submit',
     },
     {
-      href: '#linkedin', // replace
-      text: 'LinkedIn REPLACE',
+      href: '#linkedin',
+      text: 'LinkedIn',
+      image: '/media/linkedIn.png',
     },
     {
       href: '#X',
-      text: 'X REPLACE', // replace
+      text: 'X',
+      image: '/media/x_small.png',
     },
   ],
 };
@@ -39,12 +41,14 @@ export const FOOTER_CONTENT = {
       text: 'Contact Us',
     },
     {
-      href: '#linkedin', // replace
-      text: 'LinkedIn REPLACE',
+      href: '#linkedin',
+      text: 'LinkedIn',
+      image: '/media/linkedIn.png',
     },
     {
       href: '#X',
-      text: 'X REPLACE', // replace
+      text: 'X',
+      image: '/media/x_small.png',
     },
   ],
 };

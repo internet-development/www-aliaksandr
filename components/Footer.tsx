@@ -17,7 +17,11 @@ export default function Footer({ navigation }) {
           {navigation?.links && (
             <div className={styles.navLinks}>
               {navigation.links.slice(0, 3).map((link, index) => {
-                return (
+                return link.image ? (
+                  <Link key={index} href={link.href} linkStyle="animated-green">
+                    <img src={link.image} alt={link.text} />
+                  </Link>
+                ) : (
                   <Link key={index} href={link.href} linkStyle="animated-green">
                     {link.text}
                   </Link>
@@ -29,7 +33,11 @@ export default function Footer({ navigation }) {
           {navigation?.links && (
             <div className={styles.navLinks}>
               {navigation.links.slice(-2).map((link, index) => {
-                return (
+                return link.image ? (
+                  <Link key={index} href={link.href} linkStyle="animated-green">
+                    <img src={link.image} alt={link.text} />
+                  </Link>
+                ) : (
                   <Link key={index} href={link.href} linkStyle="animated-green">
                     {link.text}
                   </Link>

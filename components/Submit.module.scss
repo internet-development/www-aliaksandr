@@ -2,6 +2,12 @@
     display: flex;
     gap: 7%;
     margin-top: 10%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
 }
 
 .submit {
