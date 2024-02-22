@@ -2,7 +2,7 @@
 
 import styles from './Hero.module.scss';
 import PageGutterWrapper from './PageGutterWrapper';
-import Image from 'next/image';
+import AHSVG from './svgs/AHSVG';
 
 export default function Hero() {
   return (
@@ -13,7 +13,7 @@ export default function Hero() {
             <span className={styles.title}>Aliaksandr Hudzilin</span>
           </div>
           <div className={styles.content}>
-            <Image src="/media/AH.png" alt="Aliaksandr Hudzilin" width={560} height={464} />
+            <AHSVG></AHSVG>
             <div className={styles.textContainer}>
               Fueling the next wave of <br />
               visionary entrepreneurs.
