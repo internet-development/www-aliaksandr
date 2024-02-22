@@ -14,13 +14,18 @@
 .blockGap {
   display: grid;
   background-color: black;
-  row-gap: 4rem;
+  row-gap: 8rem;
+  width: 100%;
+
+  @media (max-width: 1440px) {
+    row-gap: 4rem;
+  }
 
   @media (max-width: 1200px) {
     row-gap: 2rem;
   }
 
   @media (max-width: 768px) {
-    row-gap: 3rem;
+    row-gap: 1rem;
   }
 }

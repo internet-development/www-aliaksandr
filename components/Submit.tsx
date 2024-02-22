@@ -3,16 +3,20 @@ import styles from './Submit.module.scss';
 export default function Submit() {
   return (
     <PageGutterWrapper>
-      <div className={styles.submitContainer}>
+      <div className={styles.sectionContainer}>
         <div className={styles.submit}>
-          Submit your pitch to join my portfolio
-          <button className={styles.button}>Submit Form</button>
+          Submit your pitch to join my portfolio <br></br>
+          <button className={styles.submitbutton}>Submit Form</button>
         </div>
-        <div className={styles.follow}>
-          Follow me on X <button className={styles.button}>Follow</button>
-        </div>
-        <div className={styles.follow}>
-          Connect on LinkedIn <button className={styles.button}>Connect</button>
+        <div className={styles.followContainer}>
+          <div className={styles.follow}>
+            Follow me on X <br></br>
+            <button className={styles.followbutton}>Follow</button>
+          </div>
+          <div className={styles.follow}>
+            Connect on LinkedIn <br></br>
+            <button className={styles.followbutton}>Connect</button>
+          </div>
         </div>
       </div>
     </PageGutterWrapper>

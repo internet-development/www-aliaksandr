@@ -1,6 +1,6 @@
-.submitContainer {
+.sectionContainer {
     display: flex;
-    gap: 10%;
+    gap: 7%;
     margin-top: 10%;
 }
 
@@ -9,6 +9,25 @@
     border-color: white;
     background-color: white;
     color: black;
+    width: 50%;
+    height: 350px;
+    border-radius: 2rem;
+    font-size: 40px;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.followContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
+.follow {
+    border: 1px solid;
+    border-color: black;
+    background-color: black;
+    color: white;
     width: 45%;
     height: 350px;
     border-radius: 16px;
@@ -16,7 +35,30 @@
     padding: 5%;
 }
 
-.follow {
-    color: white;
-    font-size: 40px;
+.submitbutton {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem 2rem; 
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-top: 5rem;
+}
+
+.followbutton {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1rem 2rem; 
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-top: 5rem;
+}
+
+.submitbutton:hover {
+  background-color: #333333; /* Darker shade of black for the hover state */
 }
