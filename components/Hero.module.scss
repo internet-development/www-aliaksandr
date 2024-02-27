@@ -11,6 +11,7 @@
     line-height: 1.6;
     color: white;
     margin-top: 20px;
+    font-family: 'EB-Garamond-Medium-Italic';
 }
 
 .heroSection {
@@ -46,18 +47,29 @@
         padding-top: 0.2rem;
         padding-bottom: 3rem;
     }
+
+    @media (max-width: 580px) {
+        align-items: center;
+    }
 }
 
 .mainHeroTitle {
-    padding-bottom: 1.5rem;
-    overflow: hidden;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .title {
-    font-size: 121px;
+    font-size: 8rem;
     font-weight: var(--font-weight-bold);
     display: block;
-    position: relative;
+    font-family: 'Inferi-Medium';
+    @media (max-width: 768px) {
+        font-size: 4rem;
+    }
+
+    @media (max-width: 580px) {
+        text-align: center;
+    }
 }
 
 .content {
@@ -67,7 +79,7 @@
     font-size: 40px;
     font-style: italic;
 
-    @media (max-width: 1050px) {
+    @media (max-width: 580px) {
         flex-direction: column;
         height: 100%;
         padding-top: 0.2rem;

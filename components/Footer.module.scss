@@ -3,18 +3,8 @@
     color: white;
 }
 
-.navbarOne {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0px;
-
-    @media (max-width: 768px) {
-        justify-content: start;
-        align-items: start;
-        gap: 1rem;
-        flex-direction: column;
-    }
+.backToTop {
+    font-family: 'SF-Pro-Display-Regular';
 }
 
 .navbar {
@@ -22,9 +12,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px 0px;
+    color: white;
 
     @media (max-width: 768px) {
-        justify-content: start;
+        justify-content: space-between;
         align-items: start;
         gap: 1rem;
         flex-direction: column;
@@ -46,7 +37,7 @@
 
 .brandName {
     color: white;
-    font-family: "SpaceGroteskMedium", sans-serif;
+    font-family: "Libre-Caslon-Condensed-Bold";
     font-size: 27px;
     font-weight: 700;
     line-height: 34px;
@@ -59,56 +50,40 @@
 }
 
 .navLinks {
-    font-family: "SpaceGroteskMedium", sans-serif;
+    font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0em;
+    color: white;
 
     @media (max-width: 768px) {
         gap: 1rem;
         flex-direction: column;
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
 
     @media (max-width: 280px) {
         gap: 0.3rem;
         font-size: 0.4rem;
     }
-
-    .navLink {
-        font-family: "SpaceGroteskBold", sans-serif;
-        margin-left: 30px;
-        display: flex;
-        align-items: center;
-        text-decoration: underline;
-
-        @media (max-width: 768px) {
-            margin-left: 0;
-            flex-direction: column;
-        }
-
-        &.icon {
-            width: 24px;
-            height: 24px;
-            align-self: center;
-        }
-    }
 }
 
-.icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.pixelsBackground {
-    width: 100%;
-    height: auto;
-    margin-top: -1px;
+.socialLinks {
+    font-family: "SF-Pro-Display-Regular";
+    display: flex;
+    gap: 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: white;
 
     @media (max-width: 768px) {
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 }

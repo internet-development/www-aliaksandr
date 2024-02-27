@@ -1,5 +1,5 @@
 .navbarContainer {
-    background-color: var(--color-black);
+    background-color: black;
 }
 
 .navbar {
@@ -10,36 +10,18 @@
 }
 
 .navLinks {
-    font-family: "SpaceGroteskMedium", sans-serif;
+    font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
     font-weight: 500;
 
     @media (max-width: 768px) {
         gap: 0.8rem;
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
 
     @media (max-width: 328px) {
         gap: 0.2rem;
-        font-size: 0.4rem;
-    }
-
-    .navLink {
-        font-family: "Aktiv Grotesk Regular", sans-serif;
-        margin-left: 30px;
-        display: flex;
-        align-items: center;
-        text-decoration: underline;
-
-        @media (max-width: 768px) {
-            display: none;
-        }
-
-        &.icon {
-            width: 24px;
-            height: 24px;
-            align-self: center;
-        }
+        font-size: 1rem;
     }
 }

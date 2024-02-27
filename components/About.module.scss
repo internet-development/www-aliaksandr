@@ -5,31 +5,13 @@
     color: white;
     padding-left: 15%;
     padding-right: 15%;
+    @media (max-width: 768px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .aboutSection {
     display: grid;
     gap: 50px;
-}
-
-.title {
-    font-size: 12px;
-    color: #909090;
-    text-transform: uppercase;
-}
-
-.content {
-    font-size: 16px;
-    letter-spacing: 0.8px;
-}
-.background {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    position: relative;
-}
-
-.softwareStartups {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    position: relative;
 }

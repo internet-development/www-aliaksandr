@@ -3,6 +3,8 @@ import styles from './Footer.module.scss';
 import React from 'react';
 import Link from './Link';
 import PageGutterWrapper from './PageGutterWrapper';
+import LinkedInSVG from './svgs/LinkedInSVG';
+import XSVG from './svgs/XSVG';
 
 export default function Footer({ navigation }) {
   return (
@@ -18,33 +20,28 @@ export default function Footer({ navigation }) {
             <div className={styles.navLinks}>
               {navigation.links.slice(0, 3).map((link, index) => {
                 return link.image ? (
-                  <Link key={index} href={link.href} linkStyle="animated-green">
+                  <Link key={index} href={link.href}>
                     <img src={link.image} alt={link.text} />
                   </Link>
                 ) : (
-                  <Link key={index} href={link.href} linkStyle="animated-green">
+                  <Link key={index} href={link.href}>
                     {link.text}
                   </Link>
                 );
               })}
             </div>
           )}
-          Back to Top
-          {navigation?.links && (
-            <div className={styles.navLinks}>
-              {navigation.links.slice(-2).map((link, index) => {
-                return link.image ? (
-                  <Link key={index} href={link.href} linkStyle="animated-green">
-                    <img src={link.image} alt={link.text} />
-                  </Link>
-                ) : (
-                  <Link key={index} href={link.href} linkStyle="animated-green">
-                    {link.text}
-                  </Link>
-                );
-              })}
-            </div>
-          )}
+          <Link href="/" linkStyle="underline">
+            <span className={styles.backToTop}>Back to Top</span>
+          </Link>
+          <div className={styles.socialLinks}>
+            <Link href="https://www.linkedin.com" linkStyle="animated-green">
+              <LinkedInSVG />
+            </Link>
+            <Link href="https://www.x.com" linkStyle="animated-green">
+              <XSVG />
+            </Link>
+          </div>
         </div>
       </PageGutterWrapper>
     </footer>

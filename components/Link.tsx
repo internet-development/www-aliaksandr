@@ -6,13 +6,10 @@ function SwitchLinkStyle(style) {
   let defaultStyle;
 
   switch (style) {
-    case 'animated-background-green':
-      return (defaultStyle = `${styles.animated}  ${styles.background}`);
-    case 'animated-green':
-      return (defaultStyle = `${styles.animated} ${styles.green}`);
-    case 'text':
+    case 'underline':
+      return (defaultStyle = `${styles.underlined}`);
     default:
-      return (defaultStyle = `${styles.grey}`);
+      return (defaultStyle = `${styles.white}`);
   }
 }
 

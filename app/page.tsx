@@ -62,14 +62,12 @@ export default async function Page(props) {
   const footer = FOOTER_CONTENT;
 
   return (
-    <div>
+    <div className={styles.blockGap}>
       <Navbar navigation={navigation} />
       <Hero />
       <About />
       <Investments />
-      <div className={styles.blockGap}>
-        <Submit />
-      </div>
+      <Submit />
       <Footer navigation={footer} />
     </div>
   );

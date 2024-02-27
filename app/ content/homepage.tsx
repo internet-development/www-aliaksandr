@@ -1,3 +1,5 @@
+import LinkedInSVG from '@root/components/svgs/LinkedInSVG';
+
 export const NAVIGATION_HOMEPAGE_CONTENT = {
   links: [
     {
@@ -13,12 +15,12 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       text: 'Submit',
     },
     {
-      href: '#linkedin',
+      href: 'https://www.linkedin.com/in/aliaksandrhudzilin',
       text: 'LinkedIn',
       image: '/media/linkedIn.png',
     },
     {
-      href: '#X',
+      href: 'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
       text: 'X',
       image: '/media/x_small.png',
     },
@@ -30,7 +32,7 @@ export const FOOTER_CONTENT = {
   links: [
     {
       href: '#about',
-      text: 'Aboout',
+      text: 'About',
     },
     {
       href: '#investments',
@@ -38,15 +40,15 @@ export const FOOTER_CONTENT = {
     },
     {
       href: '#submit',
-      text: 'Contact Us',
+      text: 'Submit',
     },
     {
-      href: '#linkedin',
+      href: 'https://www.linkedin.com/in/aliaksandrhudzilin',
       text: 'LinkedIn',
       image: '/media/linkedIn.png',
     },
     {
-      href: '#X',
+      href: 'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
       text: 'X',
       image: '/media/x_small.png',
     },

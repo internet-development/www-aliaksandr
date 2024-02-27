@@ -2,7 +2,7 @@
 
 import styles from './Hero.module.scss';
 import PageGutterWrapper from './PageGutterWrapper';
-import AHSVG from './svgs/AHSVG';
+import AHSVG from './svgs/AH';
 
 export default function Hero() {
   return (
@@ -13,11 +13,8 @@ export default function Hero() {
             <span className={styles.title}>Aliaksandr Hudzilin</span>
           </div>
           <div className={styles.content}>
-            <AHSVG></AHSVG>
-            <div className={styles.textContainer}>
-              Fueling the next wave of <br />
-              visionary entrepreneurs.
-            </div>
+            <AHSVG width="75%" height="75%"></AHSVG>
+            <div className={styles.textContainer}>Fueling the next wave of visionary entrepreneurs.</div>
           </div>
         </div>
       </PageGutterWrapper>

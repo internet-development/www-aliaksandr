@@ -15,30 +15,9 @@
 }
 
 .h2 {
-    padding-bottom: 40px;
-}
-
-.box1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid;
-    border-radius: 8px;
-    padding: 80px;
-    text-align: center;
-    position: relative;
-}
-
-.box1:hover {
-    background: linear-gradient(to right, black, white);
-}
-
-.boxLink {
-    align-self: flex-end;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 20px;
+    padding-bottom: 2rem;
+    font-family: 'Libre-Baskerville-Regular';
+    font-size: 1rem;
 }
 
 // about

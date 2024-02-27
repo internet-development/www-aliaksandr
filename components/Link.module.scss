@@ -1,47 +1,9 @@
-.animated {
-    text-decoration: none;
-    position: relative;
-    color: var(--color-white);
-
-    span {
-        display: inline-block;
-    }
-
-    span::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 4px;
-        display: block;
-        margin-top: 2px;
-        right: 0;
-        transition: width 0.2s ease;
-        -webkit-transition: width 0.2s ease;
-    }
+.underlined {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-.animated.green {
-    &:hover span::after {
-        width: 100%;
-        left: 0;
-        background: var(--color-lime-green);
-    }
-}
-
-.animated.green {
-    &:hover span::after {
-        width: 100%;
-        left: 0;
-        background: var(--color-lime-green);
-    }
-}
-
-.green {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.grey {
-    color: #434343;
+.white {
+    color: #ffffff;
     text-decoration: none;
 }
