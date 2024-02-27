@@ -13,7 +13,7 @@ export default function Hero() {
             <span className={styles.title}>Aliaksandr Hudzilin</span>
           </div>
           <div className={styles.content}>
-            <AHSVG width="75%" height="75%"></AHSVG>
+            <AHSVG width="75%" height="50%"></AHSVG>
             <div className={styles.textContainer}>Fueling the next wave of visionary entrepreneurs.</div>
           </div>
         </div>
