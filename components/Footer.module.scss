@@ -1,6 +1,10 @@
 .footerSection {
     background-color: black;
     color: white;
+
+    @media (max-width: 768px) {
+        align-items: center;
+    }
 }
 
 .backToTop {
@@ -15,10 +19,10 @@
     color: white;
 
     @media (max-width: 768px) {
-        justify-content: space-between;
-        align-items: start;
+        align-items: center;
         gap: 1rem;
         flex-direction: column;
+        justify-content: center;
     }
 }
 
@@ -41,8 +45,8 @@
     font-size: 27px;
     font-weight: 700;
     line-height: 34px;
-    letter-spacing: 0em;
     text-align: left;
+    letter-spacing: 0.07rem;
 
     @media (max-width: 768px) {
         flex-direction: column;
@@ -60,8 +64,11 @@
     color: white;
 
     @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 1rem;
-        flex-direction: column;
+        justify-items: center;
+        align-items: center;
         font-size: 1rem;
     }
 
@@ -83,7 +90,7 @@
 
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-end;
     }
 }
