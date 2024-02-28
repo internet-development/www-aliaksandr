@@ -27,12 +27,12 @@ export default function Navbar({ navigation }) {
             </div>
           )}
 
-          <div className={styles.navLinks}>
+          <div className={styles.socialLinks}>
             <Link href="https://www.linkedin.com" linkStyle="animated-green">
-              <LinkedInSVG />
+              <LinkedInSVG className={styles.socialIcon} />
             </Link>
             <Link href="https://www.x.com" linkStyle="animated-green">
-              <XSVG />
+              <XSVG className={styles.socialIcon} />
             </Link>
           </div>
         </nav>

@@ -9,22 +9,34 @@
     height: 80px;
 }
 
-.navLinks {
+.navLinks, .socialLinks {
     font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
-    font-weight: 500;
     font-size: 1rem;
     align-items: center;
+    font-weight: 1rem; /* Only applicable to .navLinks, but placed here for consolidation */
 
     @media (max-width: 768px) {
-        gap: 0.8rem;
-        font-size: 1rem;
+        font-size: 1.25rem;
+        font-weight: 1.25rem;
     }
 
     @media (max-width: 328px) {
-        gap: 0.2rem;
-        font-size: 1rem;
+        font-size: 1.25rem;
+        font-weight: 1.25rem;
     }
 }
 
+.socialIcon {
+    fill: white;
+    transition: fill 0.3s ease;
+
+    &:hover {
+        fill: #0db7ed; /* Light blue color for hover state */
+    }
+
+    @media (max-width: 768px) {
+        width: 1.5rem;
+    }
+}
