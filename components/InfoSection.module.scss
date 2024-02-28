@@ -13,6 +13,7 @@
     color: #909090;
     text-transform: uppercase;
     font-family: 'SF-Pro-Display-Regular';
+    letter-spacing: 0.1rem;
     @media (max-width: 768px) {
         margin-bottom: 1rem;
     }
@@ -20,6 +21,7 @@
 
 .content {
     font-size: 16px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.075rem;
     font-family: 'EB-Garamond-Regular';
+    -webkit-font-smoothing: antialiased;
 }

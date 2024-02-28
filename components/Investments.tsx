@@ -27,9 +27,9 @@ export default function Investments() {
         <div className={styles.aboutContainer}>
           <div className={styles.aboutSection}>
             <InfoSection
-              title={'Background'}
+              title={'Investment Philosophy'}
               content={
-                'Originally from Belarus, I immigrated to the United States in 2007 and was quickly captivated by the unique energy of Silicon Valley and San Francisco. My journey encompassed diverse roles across finance, sales, and marketing, and included academic pursuits at CCSF and UC Berkeley. Although my early startup attempt in 2014 didn&apos;t succeed, my career pivoted significantly when I ended up on the founding team of NEAR Protocol in 2018. This experience, involving sales, events, writing, fundraising, and managing an accelerator, profoundly shaped my professional trajectory. It also marked the beginning of my foray into angel investing, primarily in the web3 space. Today, my focus is on supporting the next generation of founders with their innovative and product-centric ventures, leveraging my diverse experiences to contribute more than just capital.'
+                'My core investment principles are centered around supporting founders who demonstrate strong leadership and the ability to engage customers, team members, and investors. I prioritize founders with a deep obsession for their product, favoring those who launch rapidly and iterate effectively. Flexibility in adapting or changing strategies when necessary is key, as is a strong, cohesive founding team chemistry.'
               }
             />
             <InfoSection

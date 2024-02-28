@@ -15,20 +15,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0px;
+    padding: 40px 0;
     color: white;
 
     @media (max-width: 768px) {
-        align-items: center;
         gap: 1rem;
         flex-direction: column;
-        justify-content: center;
     }
 }
 
 .brandLogo {
     display: flex;
     align-items: center;
+
     img {
         max-height: 28px;
         width: auto;
@@ -45,29 +44,21 @@
     font-size: 27px;
     font-weight: 700;
     line-height: 34px;
-    text-align: left;
     letter-spacing: 0.07rem;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
 }
 
-.navLinks {
+.navLinks, .socialLinks {
     font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
-    letter-spacing: 0em;
     color: white;
 
     @media (max-width: 768px) {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         font-size: 1rem;
     }
@@ -79,17 +70,7 @@
 }
 
 .socialLinks {
-    font-family: "SF-Pro-Display-Regular";
-    display: flex;
-    gap: 1rem;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0em;
-    color: white;
-
     @media (max-width: 768px) {
-        display: flex;
         flex-direction: row;
         align-items: flex-end;
     }
