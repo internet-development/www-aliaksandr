@@ -1,12 +1,18 @@
 .sectionContainer {
-  display: flex;
-  gap: 4%;
-  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   background-color: black;
+  width: 100%;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 4rem;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -15,7 +21,6 @@
   border-color: white;
   background-color: white;
   color: black;
-  width: 50%;
   height: 350px;
   border-radius: 2rem;
   font-size: 40px;
@@ -61,6 +66,7 @@
 
   @media (max-width: 400px) {
     flex-direction: column;
+    width: 100%;
     gap: 2rem;
     align-items: flex-start;
   }
@@ -72,7 +78,6 @@
   border-color: black;
   background-color: black;
   color: white;
-  width: 45%;
   height: 350px;
   border-radius: 16px;
   font-size: 40px;

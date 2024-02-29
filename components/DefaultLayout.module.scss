@@ -12,10 +12,17 @@
 }
 
 .blockGap {
-  display: grid;
-  background-color: black;
-  row-gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: black;
   width: 100%;
+  min-height: calc(100vh - 48px);
+  padding: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+
 
   @media (max-width: 1440px) {
     row-gap: 2rem;

@@ -4,7 +4,7 @@ import PageGutterWrapper from './PageGutterWrapper';
 
 export default function About() {
   return (
-    <div className={styles.aboutContainer} style={{ paddingTop: '1rem' }} id="about">
+    <div className={styles.aboutContainer} id="about">
       <PageGutterWrapper>
         <div className={styles.aboutSection}>
           <InfoSection

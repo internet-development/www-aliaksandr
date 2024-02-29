@@ -4,7 +4,7 @@ import styles from './Submit.module.scss';
 export default function Submit() {
   return (
     <PageGutterWrapper>
-      <div className={styles.sectionContainer} style={{ paddingTop: '1rem' }} id="submit">
+      <div className={styles.sectionContainer} id="submit">
         <div className={styles.submit}>
           Submit your pitch to join my portfolio <br />
           <button className={styles.submitbutton}>Submit Form</button>
