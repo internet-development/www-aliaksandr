@@ -19,13 +19,13 @@
     font-weight: 1rem; /* Only applicable to .navLinks, but placed here for consolidation */
 
     @media (max-width: 768px) {
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 1.25rem;
     }
 
     @media (max-width: 328px) {
-        font-size: 1.25rem;
-        font-weight: 1.25rem;
+        font-size: 1rem;
+        font-weight: 1rem;
     }
 }
 
@@ -39,5 +39,9 @@
 
     @media (max-width: 768px) {
         width: 1.5rem;
+    }
+
+    @media (max-width: 328px) {
+        display: none;
     }
 }

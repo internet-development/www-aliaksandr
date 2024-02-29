@@ -13,13 +13,11 @@
     font-family: 'EB-Garamond-Medium-Italic';
 
     @media (max-width: 1440px) {
-        padding-left: 1rem;
         font-size: 2rem;
     }
 
     @media (max-width: 768px) {
-        padding-left: 1rem;
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     @media (max-width: 580px) {
@@ -29,7 +27,7 @@
 }
 
 .heroSection {
-    font-family: "SpaceGroteskBold", sans-serif;
+    font-family: "EB-Garamond-Medium-Italic";
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -38,31 +36,12 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
-    @media (max-width: 2080px) {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    @media (max-width: 1920px) {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    @media (max-width: 1600px) {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-    }
-
     @media (max-width: 1440px) {
-        align-items: center;
-        padding-top: 0.2rem;
-        padding-bottom: 3rem;
+        align-items: flex-start;
     }
 
     @media (max-width: 1050px) {
-        align-items: center;
-        padding-top: 0.2rem;
-        padding-bottom: 3rem;
+        align-items: flex-start;
     }
 
     @media (max-width: 580px) {
