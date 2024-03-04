@@ -29,10 +29,10 @@ export default function Navbar({ navigation }) {
 
           <div className={styles.socialLinks}>
             <Link href="https://www.linkedin.com" linkStyle="animated-green">
-              <LinkedInSVG className={styles.socialIcon} />
+              <LinkedInSVG />
             </Link>
             <Link href="https://www.x.com" linkStyle="animated-green">
-              <XSVG className={styles.socialIcon} />
+              <XSVG />
             </Link>
           </div>
         </nav>

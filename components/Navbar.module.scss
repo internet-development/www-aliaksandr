@@ -10,38 +10,33 @@
     height: 80px;
 }
 
-.navLinks, .socialLinks {
+.navLinks,
+.socialLinks {
     font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     align-items: center;
-    font-weight: 1rem; /* Only applicable to .navLinks, but placed here for consolidation */
+    font-weight: 1rem;
 
     @media (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 1.25rem;
     }
 
     @media (max-width: 328px) {
-        font-size: 1rem;
-        font-weight: 1rem;
+        font-size: 1.25rem;
+        font-weight: 1.25rem;
     }
 }
 
-.socialIcon {
-    fill: white;
-    transition: fill 0.3s ease;
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:hover {
-        fill: #0db7ed; /* Light blue color for hover state */
-    }
-
-    @media (max-width: 768px) {
-        width: 1.5rem;
-    }
-
-    @media (max-width: 328px) {
-        display: none;
+    @media (max-width: 1050px) {
+        flex-direction: row;
+        align-items: flex-end;
     }
 }
