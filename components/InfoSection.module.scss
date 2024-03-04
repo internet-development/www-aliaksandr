@@ -2,20 +2,26 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     position: relative;
+    gap: 2rem;
 
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
     }
 }
 
 .title {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #909090;
     text-transform: uppercase;
     font-family: 'SF-Pro-Display-Regular';
     letter-spacing: 0.1rem;
     line-height: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .content {
