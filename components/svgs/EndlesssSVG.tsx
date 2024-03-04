@@ -1,6 +1,6 @@
 export default function EndlesssSVG(props) {
   return (
-    <svg width="112" height="57" viewBox="0 0 112 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width={props.width ?? '112'} height={props.height ?? '57'} viewBox="0 0 112 57" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

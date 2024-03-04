@@ -5,7 +5,6 @@ import PageGutterWrapper from './PageGutterWrapper';
 export default function About() {
   return (
     <div className={styles.aboutContainer} id="about">
-      <PageGutterWrapper>
         <div className={styles.aboutSection}>
           <InfoSection
             title={'Background'}
@@ -20,7 +19,6 @@ export default function About() {
             }
           />
         </div>
-      </PageGutterWrapper>
     </div>
   );
 }

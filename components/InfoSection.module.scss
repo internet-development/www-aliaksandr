@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     position: relative;
+
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -14,15 +15,13 @@
     text-transform: uppercase;
     font-family: 'SF-Pro-Display-Regular';
     letter-spacing: 0.1rem;
-    @media (max-width: 768px) {
-        margin-bottom: 1rem;
-    }
+    line-height: 2rem;
 }
 
 .content {
     font-size: 20px;
     letter-spacing: 0.075rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     font-family: 'EB-Garamond-Regular';
     -webkit-font-smoothing: antialiased;
 }

@@ -10,7 +10,6 @@
     @media (max-width: 748px) {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 30px;
     }
 }
 
@@ -25,10 +24,15 @@
     overflow: hidden;
     position: relative;
     color: white;
-    padding-left: 15%;
-    padding-right: 15%;
     padding-top: 10rem;
     padding-bottom: 10rem;
+    padding-left: 15%;
+    padding-right: 15%;
+
+    @media (max-width: 768px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .aboutSection {

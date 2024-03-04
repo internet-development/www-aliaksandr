@@ -1,6 +1,6 @@
 export default function CarvSVG(props) {
   return (
-    <svg width="223" height="56" viewBox="0 0 223 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width={props.width ?? '223'} height={props.height ?? '56'} viewBox="0 0 223 56" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

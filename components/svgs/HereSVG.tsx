@@ -1,6 +1,6 @@
 export default function HereSVG(props) {
   return (
-    <svg width="197" height="44" viewBox="0 0 197 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width={props.width ?? '197'} height={props.height ?? '44'} viewBox="0 0 197 44" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M62.1929 36.8949L60.3391 41.4519L22.3939 43.2869L0 32.2768L1.9097 27.5853L24.1854 38.5403L24.5524 38.7177L24.9568 38.6994L62.1929 36.8949Z" fill="white" />
       <path d="M20.9008 23.7009L10.7365 24.2147L2.48804 20.0431L4.39774 15.3516L20.9008 23.7009Z" fill="white" />
       <path d="M35.6393 12.3913L32.8774 11.1007L31.7266 6.58658L33.2257 2.89209L35.6393 12.3913Z" fill="white" />
