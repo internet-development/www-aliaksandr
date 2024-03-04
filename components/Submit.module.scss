@@ -13,6 +13,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 468px) {
+    width: 100%;
+    gap: 2rem;
+    align-items: flex-start;
+  }
 }
 
 .submit {
@@ -51,7 +57,7 @@
 
 .followContainer {
   display: flex;
-  flex-direction: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 
@@ -62,7 +68,7 @@
     gap: 2rem;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 468px) {
     flex-direction: column;
     width: 100%;
     gap: 2rem;
