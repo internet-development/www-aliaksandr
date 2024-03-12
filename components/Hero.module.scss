@@ -6,7 +6,15 @@
 }
 
 .textContainer {
-    font-size: 4rem;
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
     line-height: 3.25rem;
     color: var(--color-white);
     font-family: 'EB-Garamond-Medium-Italic';
