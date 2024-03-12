@@ -11,6 +11,7 @@ export default function Navbar({ navigation }) {
     <div className={styles.navbarContainer}>
       <PageGutterWrapper>
         <nav className={styles.navbar}>
+          {/* Navbar should be smaller; text size, space out */}
           {navigation?.links && (
             <div className={styles.navLinks}>
               {navigation.links.slice(0, 3).map((link, index) => {
