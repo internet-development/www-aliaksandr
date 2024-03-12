@@ -1,5 +1,5 @@
 .navbarContainer {
-    background-color: black;
+    background-color: var(--color-black);
     width: 100%;
 }
 
@@ -7,17 +7,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    padding: 36px 0px 36px 0px;
 }
 
 .navLinks,
 .socialLinks {
     font-family: "SF-Pro-Display-Regular";
     display: flex;
-    gap: 1rem;
-    font-size: 1.5rem;
+    gap: 2rem;
+    font-size: 1rem;
     align-items: center;
-    font-weight: 1rem;
+    -webkit-font-smoothing: antialiased;
 
     @media (max-width: 768px) {
         font-size: 1.25rem;
@@ -39,4 +39,8 @@
         flex-direction: row;
         align-items: flex-end;
     }
+}
+
+.link {
+    color: var(--color-white);
 }

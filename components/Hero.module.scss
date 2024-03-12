@@ -2,13 +2,13 @@
     background-color: black;
     overflow: hidden;
     position: relative;
-    color: white;
+    color: var(--color-white);
 }
 
 .textContainer {
-    font-size: 3rem;
-    line-height: 3rem;
-    color: white;
+    font-size: 4rem;
+    line-height: 3.25rem;
+    color: var(--color-white);
     font-family: 'EB-Garamond-Medium-Italic';
 
     @media (max-width: 1440px) {
@@ -54,6 +54,7 @@
 .title {
     font-size: 8rem;
     font-weight: var(--font-weight-bold);
+    color: var(--color-white);
     display: block;
     font-family: 'Inferi-Medium';
 
@@ -71,11 +72,14 @@
 }
 
 .content {
+    padding-right: 10%;
+    padding-left: 10%;
     display: flex;
     align-items: center;
     gap: 5rem;
     font-size: 40px;
     font-style: italic;
+    -webkit-font-smoothing: antialiased;
 
     @media (max-width: 768px) {
         flex-direction: column;
