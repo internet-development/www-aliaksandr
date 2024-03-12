@@ -41,7 +41,7 @@
         align-items: flex-start;
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 768px) {
         align-items: center;
     }
 }
@@ -56,11 +56,16 @@
     font-weight: var(--font-weight-bold);
     display: block;
     font-family: 'Inferi-Medium';
-    @media (max-width: 768px) {
+
+    @media (max-width: 1440px) {
+        font-size: 6rem;
+    }
+
+    @media (max-width: 1250px) {
         font-size: 4rem;
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 768px) {
         text-align: center;
     }
 }
@@ -72,10 +77,9 @@
     font-size: 40px;
     font-style: italic;
 
-    @media (max-width: 580px) {
+    @media (max-width: 768px) {
         flex-direction: column;
         height: 100%;
         padding-top: 0.2rem;
-        padding-bottom: 3rem;
     }
 }

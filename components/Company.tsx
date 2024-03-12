@@ -3,11 +3,11 @@ import Link from './Link';
 
 export default function Company({ companyLink, companyName, svgComponent: SVGComponent }) {
   return (
-    <div className={styles.box}>
-      {SVGComponent}
-      <Link href={companyLink}>
+    <Link href={companyLink}>
+      <div className={styles.box}>
+        {SVGComponent}
         <div className={styles.boxLink}>{companyName}</div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

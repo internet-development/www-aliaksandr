@@ -16,7 +16,11 @@ export default function Investments() {
       <PageGutterWrapper>
         <h2 className={styles.h2}>Selected Investments</h2>
         <div className={styles.boxes}>
-          <Company companyLink={'http://carv.io'} companyName={'carv.io'} svgComponent={<CarvSVG width="75%" />} />
+          <Company
+            companyLink={'http://carv.io'}
+            companyName={'carv.io'}
+            svgComponent={<CarvSVG width="75%" />}
+          />
           <Company companyLink={'http://herewallet.app'} companyName={'herewallet.app'} svgComponent={<HereSVG width="75%" />} />
           <Company companyLink={'http://meteorwallet.app'} companyName={'meteorwallet.app'} svgComponent={<MeteorSVG width="75%" />} />
           <Company companyLink={'http://paras.id'} companyName={'paras.id'} svgComponent={<ParasSVG width="75%" />} />
