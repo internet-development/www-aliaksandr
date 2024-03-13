@@ -20,11 +20,26 @@
     font-family: 'EB-Garamond-BoldItalic';
 
     @media (max-width: 1440px) {
-        font-size: 2rem;
+        font-size: 4rem;
+        left: 48%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1250px) {
+        font-size: 3rem;
+        left: 52%;
+    }
+
+    @media (max-width: 1068px) {
+        font-size: 3rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         font-size: 2rem;
+        left: 0%;
+        width: 100%;
     }
 
     @media (max-width: 580px) {
@@ -45,8 +60,8 @@
         align-items: flex-start;
     }
 
-    @media (max-width: 1050px) {
-        align-items: flex-start;
+    @media (max-width: 1068px) {
+        align-items: center;
     }
 
     @media (max-width: 768px) {
@@ -66,12 +81,17 @@
     display: block;
     font-family: 'Inferi-Medium';
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1304px) {
+        font-size: 7rem;
+    }
+
+    @media (max-width: 1160px) {
         font-size: 6rem;
     }
 
-    @media (max-width: 1250px) {
-        font-size: 4rem;
+    @media (max-width: 1068px) {
+        font-size: 5rem;
+        text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -88,7 +108,7 @@
     font-style: italic;
     -webkit-font-smoothing: antialiased;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1068px) {
         flex-direction: column;
         height: 100%;
         padding-top: 0.2rem;
