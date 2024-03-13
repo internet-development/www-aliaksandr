@@ -25,7 +25,7 @@ export default function Footer({ navigation }) {
                   </Link>
                 ) : (
                   <Link key={index} href={link.href}>
-                    {link.text}
+                    <span className={styles.navLinkText}>{link.text}</span>
                   </Link>
                 );
               })}

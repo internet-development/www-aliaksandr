@@ -21,12 +21,10 @@
 
     @media (max-width: 768px) {
         font-size: 1.25rem;
-        font-weight: 1.25rem;
     }
 
     @media (max-width: 328px) {
         font-size: 1.25rem;
-        font-weight: 1.25rem;
     }
 }
 
@@ -43,4 +41,7 @@
 
 .link {
     color: var(--color-white);
+    &:hover {
+        color: var(--color-grey); /* Darker shade of black for the hover state */
+    }
 }

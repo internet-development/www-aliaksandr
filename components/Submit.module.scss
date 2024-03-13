@@ -59,6 +59,7 @@
   bottom: 0;
   align-self: flex-start;
   margin-bottom: 3.125rem;
+  width: 186px;
 }
 
 .submitbutton:hover {
@@ -71,7 +72,7 @@
   align-items: center;
   gap: 1rem;
 
-  @media (max-width: 1050px) {
+  @media (max-width: 1068px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -98,7 +99,7 @@
   padding: 3.125rem 2rem 3.125rem 2rem;
   display: inline-block;
 
-  @media (max-width: 1048px) {
+  @media (max-width: 1068px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
     height: 325px;
   }
@@ -123,4 +124,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 128px;
 }
