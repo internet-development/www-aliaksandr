@@ -193,6 +193,7 @@ body {
   --color-grey: #909090;
   --color-dark-grey: #2b2b2b;
   --color-primary: #156ff7;
+  --page-width: 1440px;
 
   --type-scale-1: 4.25rem;
   --type-scale-2: 2.25rem;
@@ -204,7 +205,7 @@ body {
   --font-family: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, sans-serif;
   --font-family-mono: Consolas, monaco, monospace;
 
-  --page-gutters-desktop: 0 78px 0 78px;
+  --page-gutters-desktop: 0 64px 0 64px;
   --page-gutters-mobile: 0 16px 0 16px;
   --color-border: var(--color-black);
   --color-background: var(--color-black);

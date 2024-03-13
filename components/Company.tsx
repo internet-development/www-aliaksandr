@@ -6,7 +6,7 @@ export default function Company({ companyLink, companyName, svgComponent: SVGCom
     <Link href={companyLink}>
       <div className={styles.boxContainer}>
         <div className={styles.backgroundImageContainer}>
-          <img src={backgroundImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src={backgroundImage} alt="" className={styles.backgroundImage} />
         </div>
         <div className={styles.box}>
           <div className={styles.logo}>{SVGComponent}</div>

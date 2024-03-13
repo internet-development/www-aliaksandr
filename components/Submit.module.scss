@@ -1,4 +1,6 @@
 .sectionContainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -22,14 +24,19 @@
 }
 
 .submit {
-  background-color: white;
-  color: black;
-  height: 350px;
+  background-color: var(--color-white);
+  height: 340px;
   border-radius: 1rem;
   font-size: 40px;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 3.125rem 10rem 3.125rem 2rem;
   position: relative;
   font-family: 'SF-Pro-Display-Medium';
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1440px) {
+    width: 100%;
+    height: 325px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -48,7 +55,8 @@
   transition: background-color 0.3s ease;
   position: absolute;
   bottom: 0;
-  margin-bottom: 2rem;
+  align-self: flex-start;
+  margin-bottom: 3.125rem;
 }
 
 .submitbutton:hover {
@@ -81,7 +89,7 @@
   border: 1px solid;
   border-color: black;
   background-color: black;
-  color: white;
+  color: var(--color-white);
   height: 350px;
   border-radius: 16px;
   font-size: 40px;
@@ -96,13 +104,13 @@
 .followbutton {
   position: absolute;
   bottom: 0;
-  margin-bottom: 2rem;
-  background-color: #ffffff;
+  margin-bottom: 3.125rem;
+  background-color: var(--color-white);
   color: #000000;
-  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+  padding: 0.6rem 1.8rem 0.6rem 1.8rem;
   border: none;
   border-radius: 40px;
-  font-size: 16px;
+  font-size: 21px;
   cursor: pointer;
   display: flex;
   align-items: flex-start;

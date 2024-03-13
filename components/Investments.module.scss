@@ -1,6 +1,6 @@
 .investmentsContainer {
-    background-color: black;
-    color: white;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 .boxes {
     display: grid;
@@ -14,20 +14,22 @@
 }
 
 .h2 {
+    color: var(--color-white);
     padding-bottom: 4rem;
     font-family: 'EB-Garamond-Regular';
     font-size: 2rem;
+    letter-spacing: 0.8px;
 }
 
 .aboutContainer {
-    background-color: black;
+    background-color: var(--color-black);
     overflow: hidden;
     position: relative;
-    color: white;
+    color: var(--color-white);
+    padding-left: 10%;
+    padding-right: 2%;
     padding-top: 10rem;
-    padding-bottom: 10rem;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-bottom: 14rem;
 
     @media (max-width: 768px) {
         padding-left: 0;

@@ -22,18 +22,14 @@
   max-width: 1440px;
   margin: 0 auto;
 
-  // 1440px is default
   // TODO: make the edges of the page / text + boxes align
   // The follow me text should align with the white box
-  // TODO: double the spacing for text boxes, gap size.
   // TODO: make the name maxed out to margins
   // TODO: space out the navbar and the title text
   // TODO: bump font size on "Beyond Capital etc." slightly larger
   // TODO: Footer text smaller, spread it out
   // TODO: Align back to top with connect
   // TODO: Double space between nav and back to top
-  // TODO: Max name title to margin
-  // TODO: Hovers 
   // TODO: Fade-in animations for everything
   @media (max-width: 1440px) {
     row-gap: 2rem;
