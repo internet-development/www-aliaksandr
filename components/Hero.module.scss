@@ -1,6 +1,5 @@
 .heroContainer {
     background-color: black;
-    overflow: hidden;
     position: relative;
     color: var(--color-white);
 }
@@ -8,16 +7,17 @@
 .textContainer {
     position: absolute;
     top: 0;
-    left: 60%;
-    width: 40%;
+    left: 45%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 4rem;
     font-size: 5rem;
-    line-height: 3.25rem;
+    -webkit-font-smoothing: antialiased;
     color: var(--color-white);
-    font-family: 'EB-Garamond-Medium-Italic';
+    font-family: 'EB-Garamond-BoldItalic';
 
     @media (max-width: 1440px) {
         font-size: 2rem;
@@ -34,7 +34,7 @@
 }
 
 .heroSection {
-    font-family: "EB-Garamond-Medium-Italic";
+    font-family: "EB-Garamond-BoldItalic";
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -84,7 +84,6 @@
     padding-left: 10%;
     display: flex;
     align-items: center;
-    gap: 5rem;
     font-size: 40px;
     font-style: italic;
     -webkit-font-smoothing: antialiased;

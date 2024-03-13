@@ -24,6 +24,16 @@
 }
 
 @font-face {
+  font-family: 'EBGaramond-SemiBoldItalic';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/69cc0218-4822-4b46-b6ae-7129631f747b.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EBGaramond-BoldItalic';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/0b6a1362-29d0-4831-bb86-73e460f4b724.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Libre-Caslon-Condensed-Bold';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/625c39be-9605-4c2b-8551-22753ebeda19.ttf') format('truetype');
 }
@@ -180,7 +190,7 @@ body {
   --color-white: #FFF6E5;
   --color-white-faded-2: rgba(251, 250, 245, 0.075);
   --color-white-faded-3: rgba(251, 250, 245, 0.125);
-  --color-grey: #dcdddd;
+  --color-grey: #909090;
   --color-dark-grey: #2b2b2b;
   --color-primary: #156ff7;
 

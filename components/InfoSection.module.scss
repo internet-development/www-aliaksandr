@@ -12,8 +12,8 @@
 }
 
 .title {
-    font-size: 0.75rem;
-    color: #909090;
+    font-size: 0.85rem;
+    color: var(--color-grey);
     text-transform: uppercase;
     font-family: 'SF-Pro-Display-Regular';
     letter-spacing: 0.1rem;
@@ -25,9 +25,10 @@
 }
 
 .content {
-    font-size: 20px;
+    color: var(--color-white);
+    font-size: 16px;
     letter-spacing: 0.075rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
     font-family: 'EB-Garamond-Regular';
     -webkit-font-smoothing: antialiased;
 }
