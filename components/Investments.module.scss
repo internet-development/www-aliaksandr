@@ -31,9 +31,14 @@
     padding-top: 10rem;
     padding-bottom: 14rem;
 
+    @media (max-width: 1048px) {
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+
     @media (max-width: 768px) {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 

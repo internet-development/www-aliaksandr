@@ -14,6 +14,10 @@
     justify-content: center;
     align-items: center;
     text-decoration: underline;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 }
 
 .backToTopContainer {
@@ -21,28 +25,43 @@
 }
 
 .placeHolder {
-    @media (max-width: 1180px) {
+    @media (max-width: 1250px) {
         display: none;
     }
 }
 
 .navbar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+    grid-template-columns: repeat(4, minmax(250px, 4fr));
     gap: 1rem;
     align-items: center;
     padding: 10px 0;
     color: white;
 
+    @media (max-width: 1250px) {
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        grid-template-columns: repeat(3, minmax(250px, 4fr));
+    }
+
     @media (max-width: 1050px) {
         gap: 1rem;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        grid-template-columns: repeat(1, minmax(250px, 4fr));
     }
 }
 
 .brandLogo {
     display: flex;
     align-items: center;
+    
+    @media (max-width: 1050px) {
+        justify-content: center;
+    }
 }
 
 .brandName {
@@ -53,6 +72,10 @@
     line-height: 34px;
     letter-spacing: 0.07rem;
     text-align: flex-start;
+
+    @media (max-width: 748px) {
+        text-align: center;
+    }
 }
 
 .navLinks,
@@ -66,37 +89,24 @@
     margin-bottom: 1rem;
     justify-content: flex-end;
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1250px) {
         justify-content: flex-start;
     }
 
     @media (max-width: 1050px) {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        gap: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    @media (max-width: 748px) {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 16px;
         gap: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
     }
 
-
-    @media (max-width: 280px) {
-        gap: 1.5rem;
-        font-size: 1.5rem;
-        gap: 4rem;
-        margin-top: 4rem;
+    @media (max-width: 768px) {
+        font-size: 12px;
+        gap: 2rem;
+        margin-top: 1rem;
         margin-bottom: 4rem;
     }
 }
@@ -115,8 +125,12 @@
     }
 
     @media (max-width: 1050px) {
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
