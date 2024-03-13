@@ -3,7 +3,6 @@
     color: var(--color-white);
     width: 100%;
     margin-top: 2rem;
-    margin-bottom: 2rem;
 
     @media (max-width: 768px) {
         align-items: center;
@@ -11,16 +10,22 @@
 }
 
 .backToTop {
-    font-family: "SF-Pro-Display-Regular";
-    font-size: 1.5rem;
-    font-weight: 1rem;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.backToTopContainer {
+    display: flex;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+    gap: 1rem;
     align-items: center;
-    padding: 40px 0;
+    padding: 10px 0;
     color: white;
 
     @media (max-width: 1050px) {
@@ -32,25 +37,16 @@
 .brandLogo {
     display: flex;
     align-items: center;
-
-    img {
-        max-height: 28px;
-        width: auto;
-
-        @media (max-width: 768px) {
-            width: 70%;
-        }
-    }
 }
 
 .brandName {
-    color: white;
+    color: var(--color-white);
     font-family: "Libre-Caslon-Condensed-Bold";
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 34px;
     letter-spacing: 0.07rem;
-    text-align: center;
+    text-align: flex-start;
 }
 
 .navLinks,
@@ -58,11 +54,11 @@
     font-family: "SF-Pro-Display-Regular";
     display: flex;
     gap: 1rem;
-    font-size: 1.5rem;
-    font-weight: 1rem;
-    color: white;
+    font-size: 16px;
+    color: var(--color-white);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    justify-content: flex-end;
 
     @media (max-width: 1050px) {
         display: flex;
@@ -85,11 +81,20 @@
 
 .socialLinks {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     @media (max-width: 1050px) {
         flex-direction: row;
         align-items: flex-end;
     }
+}
+
+.socialsImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }

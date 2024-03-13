@@ -31,16 +31,22 @@ export default function Footer({ navigation }) {
               })}
             </div>
           )}
-          <Link href="/" linkStyle="underline">
-            <span className={styles.backToTop}>Back to Top</span>
-          </Link>
+          <div></div>
+
           <div className={styles.socialLinks}>
-            <Link href="https://www.linkedin.com" linkStyle="animated-green">
-              <LinkedInSVG />
+            <Link href="/">
+              <span className={styles.backToTopContainer}>
+                <span className={styles.backToTop}>Back To Top</span>
+              </span>
             </Link>
-            <Link href="https://www.x.com" linkStyle="animated-green">
-              <XSVG />
-            </Link>
+            <div className={styles.socialsImageContainer}>
+              <Link href="https://www.linkedin.com" linkStyle="animated-green">
+                <LinkedInSVG />
+              </Link>
+              <Link href="https://www.x.com" linkStyle="animated-green">
+                <XSVG />
+              </Link>
+            </div>
           </div>
         </div>
       </PageGutterWrapper>
