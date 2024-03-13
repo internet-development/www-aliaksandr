@@ -206,7 +206,7 @@ body {
   --font-family-mono: Consolas, monaco, monospace;
 
   --page-gutters-desktop: 0 64px 0 64px;
-  --page-gutters-mobile: 0 16px 0 16px;
+  --page-gutters-mobile: 0 28px 0 28px;
   --color-border: var(--color-black);
   --color-background: var(--color-black);
 
@@ -215,6 +215,7 @@ body {
 
   font-size: 16px;
   @media (max-width: 768px) {
+    --page-gutters-mobile: 0 20px 0 20px;
     font-size: 12px;
   }
 
