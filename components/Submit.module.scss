@@ -45,12 +45,13 @@
 }
 
 .submitbutton {
+  font-family: 'SF-Pro-Display-Medium';
   background-color: #000000;
-  color: #ffffff;
+  color: var(--color-white);
   padding: 0.6rem 1.2rem 0.6rem 1.2rem;
   border: none;
   border-radius: 40px;
-  font-size: 16px;
+  font-size: 21px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
