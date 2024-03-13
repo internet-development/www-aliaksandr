@@ -31,7 +31,7 @@ export default function Footer({ navigation }) {
               })}
             </div>
           )}
-          <div></div>
+          <div className={styles.placeHolder}></div>
 
           <div className={styles.socialLinks}>
             <Link href="/">
