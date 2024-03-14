@@ -9,6 +9,7 @@ import Hero from '@root/components/Hero';
 import About from '@root/components/About';
 import Investments from '@root/components/Investments';
 import Submit from '@root/components/Submit';
+import Thesis from '@root/components/Thesis';
 import Footer from '@root/components/Footer';
 
 export async function generateMetadata({ params, searchParams }) {
@@ -67,6 +68,7 @@ export default async function Page(props) {
       <Hero />
       <About />
       <Investments />
+      <Thesis />
       <Submit />
       <Footer navigation={footer} />
     </div>

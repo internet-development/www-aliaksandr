@@ -40,11 +40,11 @@ export default function Footer({ navigation }) {
               </span>
             </Link>
             <div className={styles.socialsImageContainer}>
-              <Link href="https://www.linkedin.com" linkStyle="animated-green">
-                <LinkedInSVG />
+              <Link href="https://www.linkedin.com">
+                <LinkedInSVG className={styles.socialIcon} />
               </Link>
-              <Link href="https://www.x.com" linkStyle="animated-green">
-                <XSVG />
+              <Link href="https://www.x.com">
+                <XSVG className={styles.socialIcon} />
               </Link>
             </div>
           </div>

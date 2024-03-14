@@ -145,9 +145,20 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 377px) {
+        display: none
+    }
+
+    .socialIcon {
+        @media (max-width: 500px) {
+            display:none;
+        }
+    }
 }
 
 .navLinkText {
+    transition: 0.3s ease;
     color: var(--color-white);
     &:hover {
         color: var(--color-grey); /* Darker shade of black for the hover state */

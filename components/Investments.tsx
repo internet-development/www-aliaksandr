@@ -14,7 +14,7 @@ import SyndicateSVG from './svgs/SyndicateSVG';
 
 export default function Investments() {
   return (
-    <div className={styles.investmentsContainer} style={{ paddingTop: '1rem' }} id="investments">
+    <div className={styles.investmentsContainer} id="investments">
       <PageGutterWrapper>
         <h2 className={styles.h2}>Selected Investments</h2>
         <div className={styles.boxes}>
@@ -36,22 +36,6 @@ export default function Investments() {
             backgroundImage={'/media/fraction-gradient.png'}
           />
           <Company companyLink={'https://www.atlaszk.com/'} companyName={'atlaszk.com'} svgComponent={<AtlasSVG width="75%" />} backgroundImage={'/media/atlas-gradient.png'} />
-        </div>
-        <div className={styles.aboutContainer}>
-          <div className={styles.aboutSection}>
-            <InfoSection
-              title={'Investment Philosophy'}
-              content={
-                'My core investment principles are centered around supporting founders who demonstrate strong leadership and the ability to engage customers, team members, and investors. I prioritize founders with a deep obsession for their product, favoring those who launch rapidly and iterate effectively. Flexibility in adapting or changing strategies when necessary is key, as is a strong, cohesive founding team chemistry.'
-              }
-            />
-            <InfoSection
-              title={'beyond capital'}
-              content={
-                'Beyond capital, I offer startups extensive support and resources. Leveraging my vast network of connections in Silicon Valley and beyond, which I actively expand every week, I provide opportunities for various nodes of my social graph to connect. My experience in fundraising equips me to guide founders through this critical process. Having been on a founding team at NEAR myself, I bring empathy and practical insights to the entrepreneurial journey. My approach emphasizes a strong go-to-market strategy and encourages direct engagement with customers. Additionally, I foster an experimental mindset, helping founders explore and identify effective distribution channels for their products.'
-              }
-            />
-          </div>
         </div>
       </PageGutterWrapper>
     </div>

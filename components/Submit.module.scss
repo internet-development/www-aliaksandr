@@ -24,6 +24,7 @@
   z-index: 2;
   position: relative;
   pointer-events: none;
+  color: var(--submit-color);
 }
 
 .submit {
@@ -47,6 +48,7 @@
     color: var(--color-white);
     --submit-color: var(--color-white);
     --submit-text-color: var(--color-black);
+    --submit-title-color: var(--color-white);
     --background-opacity: 1;
   }
 
