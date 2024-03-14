@@ -7,6 +7,9 @@ export default function Submit() {
       <div className={styles.sectionContainer} id="submit">
         <div className={styles.submitContainer}>
           <div className={styles.submit}>
+            <div className={styles.backgroundImageContainer}>
+              <img src={'/media/portfolio-gradient.png'} alt="" className={styles.backgroundImage} />
+            </div>
             <div className={styles.submitText}>
               Submit your pitch to join my portfolio <br />
             </div>
