@@ -13,9 +13,7 @@ export default function Submit() {
             <div className={styles.submitText}>
               Submit your pitch to join my portfolio <br />
             </div>
-            <Link href={'/'}>
               <button className={styles.submitbutton}>Submit Form</button>
-            </Link>
           </div>
         </div>
         <div className={styles.followContainer}>

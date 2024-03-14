@@ -2,7 +2,6 @@
 
 import styles from './Hero.module.scss';
 import PageGutterWrapper from './PageGutterWrapper';
-import AHSVG from './svgs/AH';
 
 export default function Hero() {
   return (
