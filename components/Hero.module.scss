@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 4rem;
+    line-height: 5rem;
     font-size: 5rem;
     -webkit-font-smoothing: antialiased;
     color: var(--color-white);
@@ -26,17 +26,20 @@
 
     @media (max-width: 1250px) {
         font-size: 3rem;
+        line-height: 3rem;
         left: 52%;
     }
 
     @media (max-width: 1068px) {
-        font-size: 2rem;
-        left: 64%;
+        font-size: 2.5rem;
+        left: 62%;
         width: 40%;
+        line-height: 2.5rem;
     }
 
     @media (max-width: 900px) {
         font-size: 3rem;
+        line-height: 3rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -65,7 +68,7 @@
         align-items: flex-start;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         align-items: center;
     }
 }
@@ -95,6 +98,11 @@
         text-align: center;
     }
 
+    @media (max-width: 900px) {
+        font-size: 4rem;
+        text-align: center;
+    }
+
     @media (max-width: 768px) {
         text-align: center;
     }
@@ -110,7 +118,7 @@
     -webkit-font-smoothing: antialiased;
 
     @media (max-width: 900px) {
-        gap: 1rem;
+        gap: 2rem;
         flex-direction: column;
         height: 100%;
         padding-top: 0.2rem;
