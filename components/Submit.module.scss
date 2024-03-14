@@ -139,25 +139,25 @@
   padding: 3.125rem 2rem 3.125rem 2rem;
   display: inline-block;
 
-  @media (max-width: 1068px) {
+  @media (max-width: 1050px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 325px;
+    height: 300px;
   }
 
   @media (max-width: 768px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 325px;
+    height: 275px;
   }
 }
 
 .followbutton {
   position: absolute;
   bottom: 0;
-  margin-bottom: 3.125rem;
+  margin-bottom: 3rem;
   background-color: var(--color-white);
   color: #000000;
   padding: 0.6rem 1.8rem;
-  border: none;
+  border: 2px solid var(--color-white);
   border-radius: 40px;
   font-size: 21px;
   cursor: pointer;
@@ -168,7 +168,8 @@
   transition: 0.5s ease;
 
   &:hover {
-    background-color: var(--color-grey);
+    background-color: var(--color-black);
+    color: var(--color-white);
   }
 
   @media (max-width: 640px) {

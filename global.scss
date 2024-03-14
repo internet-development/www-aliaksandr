@@ -149,15 +149,15 @@ body.theme-light {
   --color-background: var(--color-black);
   --color-background-2: var(--color-black-faded-2);
   --color-background-3: var(--color-black-faded-3);
-  --color-text: var(--color-black);
+  --color-text: var(--color-white);
   --color-border: var(--color-grey);
   --color-accent: rgba(1, 141, 255, 0.1);
   --color-success: rgba(68, 198, 127, 1);
   --color-error: rgba(239, 68, 68, 1);
 
   --theme-modal: inset 0 0 0 1px var(--color-border), 0 0 1px 4px rgba(0, 0, 0, 0.02);
-  --theme-button: var(--color-black);
-  --theme-button-color: var(--color-white);
+  --theme-button: var(--color-white);
+  --theme-button-color: var(--color-black);
   --theme-button-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   --theme-button-shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

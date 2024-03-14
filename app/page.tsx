@@ -1,16 +1,16 @@
-import Package from '@root/package.json';
-import styles from '@components/DefaultLayout.module.scss';
-
 import '@root/global.scss';
 
 import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './ content/homepage';
-import Navbar from '@root/components/Navbar';
-import Hero from '@root/components/Hero';
+
 import About from '@root/components/About';
+import Footer from '@root/components/Footer';
+import Hero from '@root/components/Hero';
 import Investments from '@root/components/Investments';
+import Navbar from '@root/components/Navbar';
+import Package from '@root/package.json';
+import styles from '@components/DefaultLayout.module.scss';
 import Submit from '@root/components/Submit';
 import Thesis from '@root/components/Thesis';
-import Footer from '@root/components/Footer';
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
