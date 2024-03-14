@@ -1,6 +1,6 @@
 export default function SyndicateSVG(props) {
   return (
-    <svg {...props} width={props.width ?? '237'} height={props.height ?? '50'} viewBox="0 0 237 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width={props.width ?? '237'} height={props.height ?? '40'} viewBox="0 0 237 31" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"

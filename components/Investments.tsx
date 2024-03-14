@@ -1,13 +1,15 @@
-import Company from './Company';
-import InfoSection from './InfoSection';
-import styles from './Investments.module.scss';
-import Link from './Link';
-import PageGutterWrapper from './PageGutterWrapper';
+import AtlasSVG from './svgs/AtlasSVG';
 import CarvSVG from './svgs/CarvSVG';
+import Company from './Company';
 import EndlesssSVG from './svgs/EndlesssSVG';
+import FractionSVG from './svgs/FractionSVG';
 import HereSVG from './svgs/HereSVG';
+import InfoSection from './InfoSection';
+import Link from './Link';
 import MeteorSVG from './svgs/MeteorSVG';
+import PageGutterWrapper from './PageGutterWrapper';
 import ParasSVG from './svgs/ParasSVG';
+import styles from './Investments.module.scss';
 import SyndicateSVG from './svgs/SyndicateSVG';
 
 export default function Investments() {
@@ -27,6 +29,13 @@ export default function Investments() {
           <Company companyLink={'http://paras.id'} companyName={'paras.id'} svgComponent={<ParasSVG width="75%" />} backgroundImage={'/media/paras-gradient.png'} />
           <Company companyLink={'http://syndicate.io'} companyName={'syndicate.io'} svgComponent={<SyndicateSVG width="75%" />} backgroundImage={'/media/syndicate-gradient.png'} />
           <Company companyLink={'http://endless.fm'} companyName={'endless.fm'} svgComponent={<EndlesssSVG width="75%" />} backgroundImage={'/media/endless-gradient.png'} />
+          <Company
+            companyLink={'https://fractionai.xyz/'}
+            companyName={'fractionai.xyz'}
+            svgComponent={<FractionSVG width="75%" />}
+            backgroundImage={'/media/fraction-gradient.png'}
+          />
+          <Company companyLink={'https://www.atlaszk.com/'} companyName={'atlaszk.com'} svgComponent={<AtlasSVG width="75%" />} backgroundImage={'/media/atlas-gradient.png'} />
         </div>
         <div className={styles.aboutContainer}>
           <div className={styles.aboutSection}>

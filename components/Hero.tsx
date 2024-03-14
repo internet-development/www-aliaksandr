@@ -12,7 +12,7 @@ export default function Hero() {
             <span className={styles.title}>Aliaksandr Hudzilin</span>
           </div>
           <div className={styles.content}>
-            <img src="/media/hudzilin.png" alt="Aliaksandr Hudzilin" style={{ width: '100%', height: '100%' }} />
+            <img src="/media/hudzilin_1.png" alt="Aliaksandr Hudzilin" style={{ width: '100%', height: '100%' }} />
             <p className={styles.textContainer}>Fueling the next wave of visionary entrepreneurs.</p>
           </div>
         </div>
