@@ -11,20 +11,20 @@ export default function Submit() {
               <img src={'/media/portfolio-gradient.png'} alt="" className={styles.backgroundImage} />
             </div>
             <div className={styles.submitText}>
-              Submit your pitch to join my portfolio <br />
+              Submit your pitch to join my portfolio
             </div>
-              <button className={styles.submitbutton}>Submit Form</button>
+            <button className={styles.submitbutton}>Submit Form</button>
           </div>
         </div>
         <div className={styles.followContainer}>
           <div className={styles.follow}>
-            Follow me on X
+            <div className={styles.followText}>Follow me on X</div>
             <Link href={'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'}>
               <div className={styles.followbutton}>Follow</div>
             </Link>
           </div>
           <div className={styles.follow}>
-            Connect on LinkedIn <br />
+            <div className={styles.followText}>Connect on LinkedIn</div>
             <Link href={'https://www.linkedin.com/in/aliaksandrhudzilin'}>
               <div className={styles.followbutton}>Connect</div>
             </Link>

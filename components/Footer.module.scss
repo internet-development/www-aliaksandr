@@ -15,6 +15,10 @@
     align-items: center;
     text-decoration: underline;
 
+    &:hover {
+        color: var(--color-grey);
+    }
+
     @media (max-width: 768px) {
         font-size: 12px;
     }
