@@ -118,6 +118,13 @@
   }
 }
 
+.followText {
+  font-family: 'SF-Pro-Display-Medium';
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-white);
+  pointer-events: none;
+}
+
 .follow {
   position: relative;
   border: 1px solid;
