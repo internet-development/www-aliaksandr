@@ -5,9 +5,15 @@ export default function Submit() {
   return (
     <PageGutterWrapper>
       <div className={styles.sectionContainer} id="submit">
-        <div className={styles.submit}>
-          Submit your pitch to join my portfolio <br />
-          <button className={styles.submitbutton}>Submit Form</button>
+        <div className={styles.submitContainer}>
+          <div className={styles.submit}>
+            <div className={styles.submitText}>
+              Submit your pitch to join my portfolio <br />
+            </div>
+            <Link href={'/'}>
+              <button className={styles.submitbutton}>Submit Form</button>
+            </Link>
+          </div>
         </div>
         <div className={styles.followContainer}>
           <div className={styles.follow}>
