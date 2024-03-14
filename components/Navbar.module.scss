@@ -37,6 +37,10 @@
         flex-direction: row;
         align-items: center;
     }
+
+    @media (max-width: 500px) {
+        display: none;
+    }
 }
 
 .link {

@@ -168,4 +168,8 @@
   &:hover {
     background-color: var(--color-grey);
   }
+
+  @media (max-width: 640px) {
+    margin-left: 2rem;
+  }
 }

@@ -21,7 +21,7 @@
   min-height: calc(100vh - 48px);
   max-width: 1440px;
   margin: 0 auto;
-  // TODO: Fade-in animations for everything
+  
   @media (max-width: 1440px) {
     row-gap: 1rem;
   }
