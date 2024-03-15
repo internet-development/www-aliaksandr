@@ -162,12 +162,12 @@
 
   @media (max-width: 1050px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 300px;
+    height: 250px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 632px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 260px;
+    height: 220px;
   }
 }
 
@@ -191,9 +191,5 @@
   &:hover {
     background-color: var(--color-black);
     color: var(--color-white);
-  }
-
-  @media (max-width: 640px) {
-    margin-left: 2rem;
   }
 }
