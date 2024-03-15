@@ -44,6 +44,21 @@
   min-width: 100%;
   min-height: 100%;
 
+  @media (max-width: 1050px) {
+    padding: 3.125rem 0rem 3.125rem 0rem;
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3.125rem 0rem 3.125rem 0rem;
+    height: 300px;
+  }
+
+  @media (max-width: 396px) {
+    padding: 3.125rem 0rem 3.125rem 0rem;
+    height: 370px;
+  }
+
   &:hover {
     color: var(--color-white);
     --submit-color: var(--color-white);
@@ -67,6 +82,12 @@
     align-self: flex-start;
     margin-bottom: 2.85rem;
     width: 186px;
+
+  
+    @media (max-width: 640px) {
+      padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+      width: 150px;
+    }
   }
 
   .backgroundImageContainer {
@@ -146,7 +167,7 @@
 
   @media (max-width: 768px) {
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 275px;
+    height: 260px;
   }
 }
 

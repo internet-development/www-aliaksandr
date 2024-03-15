@@ -12,25 +12,32 @@
 .backToTop {
     font-size: 16px;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     transition: 0.3s ease;
+    color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
 
     &:hover {
         color: var(--color-grey);
     }
 
-    @media (max-width: 1050px) {
+    @media (max-width: 768px) {
         font-size: 18px;
     }
 }
 
 .backToTopContainer {
     display: flex;
-}
+    justify-content: flex-end;
+    align-items: flex-end;
 
-.placeHolder {
-    @media (max-width: 1250px) {
-        display: none;
+    @media (max-width: 1050px) {
+        justify-content: flex-start;
+    }
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        margin-bottom: 3rem;
     }
 }
 
@@ -41,16 +48,17 @@
     align-items: center;
     padding: 10px 0;
     color: white;
-
-    @media (max-width: 1250px) {
+    
+    @media (max-width: 1050px) {
         gap: 1rem;
         align-items: center;
         justify-content: center;
-
-        grid-template-columns: repeat(3, minmax(250px, 4fr));
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, minmax(250px, 4fr));
     }
 
-    @media (max-width: 1050px) {
+    @media (max-width: 768px) {
         gap: 1rem;
         align-items: center;
         justify-content: center;
@@ -63,7 +71,7 @@
     display: flex;
     align-items: center;
     
-    @media (max-width: 1050px) {
+    @media (max-width: 768px) {
         justify-content: center;
     }
 }
@@ -77,7 +85,7 @@
     letter-spacing: 0.07rem;
     text-align: flex-start;
 
-    @media (max-width: 1050px) {
+    @media (max-width: 768px) {
         font-size: 36px;
         text-align: center;
     }
@@ -89,17 +97,14 @@
     display: flex;
     gap: 2rem;
     font-size: 16px;
-    color: var(--color-white);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    justify-content: flex-end;
-    -webkit-font-smoothing: antialiased;
-
-    @media (max-width: 1250px) {
-        justify-content: flex-start;
-    }
 
     @media (max-width: 1050px) {
+        justify-content: flex-end;
+    }
+
+    @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -119,18 +124,18 @@
 
 .socialLinks {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1250px) {
         justify-content: flex-end;
         gap: 5rem;
     }
 
-    @media (max-width: 1050px) {
+    @media (max-width: 768px) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -160,6 +165,8 @@
 .navLinkText {
     transition: 0.3s ease;
     color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    
     &:hover {
         color: var(--color-grey); /* Darker shade of black for the hover state */
     }
