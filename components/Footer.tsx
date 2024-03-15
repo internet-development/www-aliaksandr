@@ -35,11 +35,14 @@ export default function Footer({ navigation }) {
               </div>
             )}
             <Link href="/">
-              <span className={styles.backToTopContainer}>
+              <span className={styles.backToTopContainerLesser}>
                 <span className={styles.backToTop}>Back To Top</span>
               </span>
             </Link>
             <div className={styles.socialLinks}>
+              <span className={styles.backToTopContainerDesktop}>
+                <span className={styles.backToTop}>Back To Top</span>
+              </span>
               <div className={styles.socialsImageContainer}>
                 <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/">
                   <LinkedInSVG className={styles.socialIcon} />

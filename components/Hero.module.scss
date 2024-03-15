@@ -13,11 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 5rem;
-    font-size: 5rem;
-    -webkit-font-smoothing: antialiased;
+    line-height: 4rem;
+    font-size: 4rem;
     color: var(--color-white);
-    font-family: 'EB-Garamond-BoldItalic';
+    font-family: 'EB-Garamond-Italic';
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.125rem;
 
     @media (max-width: 1440px) {
         font-size: 4rem;
@@ -100,6 +101,7 @@
 
     @media (max-width: 900px) {
         font-size: 4rem;
+        line-height: 4rem;
         text-align: center;
     }
 

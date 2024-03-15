@@ -26,24 +26,39 @@
     }
 }
 
-.backToTopContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+// Specifically for gridded layouts on smaller devices
+.backToTopContainerLesser {
+    @media (min-width: 1050px) {
+        display: none;
+    }
 
     @media (max-width: 1050px) {
         justify-content: flex-start;
     }
 
     @media (max-width: 768px) {
-        justify-content: center;
-        margin-bottom: 3rem;
+        display: none;
+    }
+}
+
+// Specifically for gridded layouts on larger devices or mobile
+.backToTopContainerDesktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 1050px) {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
     }
 }
 
 .navbar {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 4fr));
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 1rem;
     align-items: center;
     padding: 10px 0;
@@ -78,12 +93,16 @@
 
 .brandName {
     color: var(--color-white);
-    font-family: "Libre-Caslon-Condensed-Bold";
+    font-family: 'Inferi-Medium';
     font-size: 26px;
     font-weight: 700;
     line-height: 34px;
     letter-spacing: 0.07rem;
     text-align: flex-start;
+
+    @media (max-width: 1250px) {
+        font-size: 21px;
+    }
 
     @media (max-width: 768px) {
         font-size: 36px;
@@ -99,10 +118,8 @@
     font-size: 16px;
     margin-top: 1rem;
     margin-bottom: 1rem;
-
-    @media (max-width: 1050px) {
-        justify-content: flex-end;
-    }
+    justify-content: flex-end;
+    align-items: center;
 
     @media (max-width: 768px) {
         display: flex;
@@ -124,15 +141,14 @@
 
 .socialLinks {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 
-    @media (max-width: 1250px) {
+    @media (max-width: 1050px) {
         justify-content: flex-end;
-        gap: 5rem;
     }
 
     @media (max-width: 768px) {
@@ -142,6 +158,7 @@
         margin-left: 0;
         margin-top: 0;
         margin-bottom: 0;
+        gap: 5rem;
     }
 }
 
@@ -150,7 +167,10 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
 }
 
 .navLinkText {
