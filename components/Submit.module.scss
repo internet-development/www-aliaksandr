@@ -82,11 +82,17 @@
     align-self: flex-start;
     margin-bottom: 2.85rem;
     width: 186px;
+    max-height: 45px;
 
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+    }
   
     @media (max-width: 640px) {
       padding: 0.8rem 1.4rem 0.8rem 1.4rem;
-      width: 150px;
     }
   }
 
@@ -161,13 +167,14 @@
   display: inline-block;
 
   @media (max-width: 1050px) {
-    padding: 3.125rem 0rem 3.125rem 0rem;
+    padding: 2.5rem 0rem 2.5rem 0rem;
     height: 250px;
   }
 
-  @media (max-width: 632px) {
+  @media (min-width: 632px) and (max-width: 1050px) {
+    
     padding: 3.125rem 0rem 3.125rem 0rem;
-    height: 220px;
+    height: 260px;
   }
 }
 
