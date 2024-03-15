@@ -110,6 +110,15 @@
     }
 }
 
+.socialIcon {
+    color: var(--color-white);
+    transition: 0.3s ease;
+
+    &:hover {
+        color: var(--color-grey);
+    }
+}
+
 .navLinks,
 .socialLinks {
     font-family: "SF-Pro-Display-Regular";

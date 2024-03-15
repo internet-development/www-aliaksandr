@@ -14,7 +14,7 @@ export default function Footer({ navigation }) {
       <PageGutterWrapper>
         <FadeInSection>
           <div className={styles.navbar}>
-            <Link href="/">
+            <Link href="#">
               <span className={styles.brandLogo}>
                 <span className={styles.brandName}>{navigation.brandName}</span>
               </span>
@@ -34,20 +34,22 @@ export default function Footer({ navigation }) {
                 })}
               </div>
             )}
-            <Link href="/">
+            <Link href="#">
               <span className={styles.backToTopContainerLesser}>
                 <span className={styles.backToTop}>Back To Top</span>
               </span>
             </Link>
             <div className={styles.socialLinks}>
-              <span className={styles.backToTopContainerDesktop}>
-                <span className={styles.backToTop}>Back To Top</span>
-              </span>
+              <Link href="#">
+                <span className={styles.backToTopContainerDesktop}>
+                  <span className={styles.backToTop}>Back To Top</span>
+                </span>
+              </Link>
               <div className={styles.socialsImageContainer}>
-                <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/">
+                <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/" target="_blank">
                   <LinkedInSVG className={styles.socialIcon} />
                 </Link>
-                <Link href="https://twitter.com/AliaksandrH">
+                <Link href="https://twitter.com/AliaksandrH" target="_blank">
                   <XSVG className={styles.socialIcon} />
                 </Link>
               </div>

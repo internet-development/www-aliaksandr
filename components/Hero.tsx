@@ -9,7 +9,7 @@ import { FadeInSection } from '@components/FadeInSection';
 export default function Hero() {
   return (
     <PageGutterWrapper>
-      <FadeInSection>
+      <FadeInSection order={4}>
         <div className={styles.heroContainer}>
           <div className={styles.heroSection}>
             <div className={styles.mainHeroTitle}>

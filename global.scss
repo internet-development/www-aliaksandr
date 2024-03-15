@@ -187,7 +187,9 @@ body.theme-dark {
 #__next {
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   --color-black: #000000;
   --color-black-faded-2: rgba(0, 11, 0, 0.075);

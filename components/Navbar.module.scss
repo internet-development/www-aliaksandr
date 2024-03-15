@@ -15,6 +15,7 @@
     }
 }
 
+// Animations should come in sequentially
 .navLinks,
 .socialLinks {
     font-family: "SF-Pro-Display-Regular";
@@ -23,6 +24,7 @@
     font-size: 20px;
     align-items: center;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 
     @media (max-width: 768px) {
         font-size: 1.25rem;
@@ -51,8 +53,11 @@
 }
 
 .socialImage {
+    color: var(--color-white);
+    transition: 0.3s ease;
+
     &:hover {
-        color: "#909090"
+        color: var(--color-grey);
     }
 }
 

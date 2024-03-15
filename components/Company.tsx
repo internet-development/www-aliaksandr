@@ -5,7 +5,7 @@ import { FadeInSection } from '@components/FadeInSection';
 
 export default function Company({ companyLink, companyName, svgComponent: SVGComponent, backgroundImage }) {
   return (
-    <Link href={companyLink}>
+    <Link href={companyLink} target="_blank">
       <FadeInSection>
         <div className={styles.boxContainer}>
           <div className={styles.backgroundImageContainer}>

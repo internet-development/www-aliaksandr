@@ -6,7 +6,7 @@ import { FadeInSection } from './FadeInSection';
 export default function About() {
   return (
     <PageGutterWrapper>
-      <FadeInSection>
+      <FadeInSection order={4}>
         <div className={styles.aboutContainer} id="about">
           <div className={styles.aboutSection}>
             <InfoSection

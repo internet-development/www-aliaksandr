@@ -4,35 +4,29 @@ import styles from "@components/FadeInSection.module.scss";
 import { useEffect, useRef, useState } from "react";
 
 export function FadeInSection(props) {
-  const [isVisible, setVisible] = useState(false);
-  const domRef = useRef<HTMLInputElement | null>(null);
+    const [isVisible, setVisible] = useState(false);
+    const domRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        // This will now check for when at least 25% of the element is visible
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
-          setVisible(true);
-        }
-      });
-    }, 
-    {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.25
-    });
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                }
+            });
+        });
 
-    const { current } = domRef;
-    observer.observe(current as any);
+        const { current } = domRef;
+        observer.observe(current as any);
 
-    return () => observer.unobserve(current as any);
-  }, []);
-  return (
-    <div
-      className={`${styles.fadeIn} ${isVisible ? styles.isVisible : ""}`}
-      ref={domRef}
-    >
-      {props.children}
-    </div>
-  );
+        return () => observer.unobserve(current as any);
+    }, []);
+
+    const animationDelay = `${props.order * 100}ms`;
+
+    return (
+      <div className={`${styles.fadeIn} ${isVisible ? styles.isVisible : ''}`} ref={domRef} style={{ transitionDelay: isVisible ? animationDelay : '0ms' }}>
+        {props.children}
+      </div>
+    );
 }
