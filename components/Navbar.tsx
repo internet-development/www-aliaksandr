@@ -32,10 +32,10 @@ export default function Navbar({ navigation }) {
             )}
 
             <div className={styles.socialLinks}>
-              <Link href="https://www.linkedin.com">
+              <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/">
                 <LinkedInSVG />
               </Link>
-              <Link href="https://www.x.com">
+              <Link href="https://twitter.com/AliaksandrH">
                 <XSVG />
               </Link>
             </div>

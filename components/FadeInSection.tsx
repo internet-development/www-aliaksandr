@@ -8,12 +8,21 @@ export function FadeInSection(props) {
   const domRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisible(entry.isIntersecting);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        // This will now check for when at least 50% of the element is visible
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          setVisible(true);
         }
       });
+    }, 
+    {
+      // Set the root to null, implying the viewport
+      root: null,
+      // rootMargin can be adjusted if you want to trigger the event earlier or later
+      rootMargin: "0px",
+      // Setting threshold to 0.5 means that the callback will be executed when 50% of the target is visible
+      threshold: 0.5 
     });
 
     const { current } = domRef;

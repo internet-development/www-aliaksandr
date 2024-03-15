@@ -15,7 +15,9 @@ export default function Submit() {
                 <img src={'/media/portfolio-gradient.png'} alt="" className={styles.backgroundImage} />
               </div>
               <div className={styles.submitText}>Submit your pitch to join my portfolio</div>
-              <button className={styles.submitbutton}>Submit Form</button>
+              <Link href={'https://airtable.com/appca6jUjuI1jI1Hj/pagG1PZA9gznFI87l/form'}>
+                <button className={styles.submitbutton}>Submit Form</button>
+              </Link>
             </div>
           </div>
           <div className={styles.followContainer}>
