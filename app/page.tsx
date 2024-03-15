@@ -30,7 +30,7 @@ export async function generateMetadata({ params, searchParams }) {
       type: 'website',
       images: [
         {
-          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/template-twitter-summary-large.png',
+          url: '/ah_og.jpg',
           width: 1200,
           height: 628,
         },
@@ -42,16 +42,16 @@ export async function generateMetadata({ params, searchParams }) {
       url,
       handle,
       card: 'summary_large_image',
-      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/template-twitter-summary-large.png'],
+      images: ['/ah_og.jpg'],
     },
     icons: {
-      icon: '/favicon-32x32.png',
-      shortcut: '/favicon-16x16.png',
-      apple: [{ url: '/apple-touch-icon.png' }, { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+      icon: '/ah_favicon.png',
+      shortcut: '/ah_favicon.png',
+      apple: [{ url: '/ah_favicon.png' }, { url: '/ah_favicon.png', sizes: '180x180', type: 'image/png' }],
       other: [
         {
-          rel: 'apple-touch-icon-precomposed',
-          url: '/apple-touch-icon-precomposed.png',
+          rel: 'ah_favicon',
+          url: '/ah_favicon.png',
         },
       ],
     },
