@@ -92,7 +92,13 @@
     }
   
     @media (max-width: 640px) {
-      padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+      padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+    }
+
+    @media (max-width: 428px) {
+      margin-bottom: 2rem;
+      width: 150px;
+      max-height: 40px;
     }
   }
 
