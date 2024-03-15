@@ -11,15 +11,10 @@ export function FadeInSection(props) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         // This will now check for when at least 75% of the element is visible
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
+        if (entry.isIntersecting) {
           setVisible(true);
         }
       });
-    }, 
-    {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.75
     });
 
     const { current } = domRef;
