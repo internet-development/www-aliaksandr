@@ -15,11 +15,11 @@ import Thesis from '@root/components/Thesis';
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
   const description = Package.description;
-  const url = 'https://wireframes.internet.dev';
-  const handle = '@internetxstudio';
+  const url = 'https://hudzilin.vc';
+  const handle = '@AliaksandrH';
 
   return {
-    metadataBase: new URL('https://wireframes.internet.dev'),
+    metadataBase: new URL('https://hudzilin.vc'),
     title,
     description,
     url,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params, searchParams }) {
       type: 'website',
       images: [
         {
-          url: '/ah_og.jpg',
+          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/ed6af9de-feda-40f9-bc5f-85031f048543.jpg',
           width: 1200,
           height: 628,
         },
@@ -42,7 +42,7 @@ export async function generateMetadata({ params, searchParams }) {
       url,
       handle,
       card: 'summary_large_image',
-      images: ['/ah_og.jpg'],
+      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/ed6af9de-feda-40f9-bc5f-85031f048543.jpg'],
     },
     icons: {
       icon: '/ah_favicon.png',
