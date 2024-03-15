@@ -41,12 +41,19 @@
     @media (max-width: 500px) {
         display: none;
     }
+
+}
+
+.socialImage {
+    &:hover {
+        color: var(--color-grey)
+    }
 }
 
 .link {
     color: var(--color-white);
     transition: 0.3s ease;
     &:hover {
-        color: var(--color-grey); /* Darker shade of black for the hover state */
+        color: var(--color-grey);
     }
 }
