@@ -13,11 +13,13 @@ export default function Hero() {
         <div className={styles.heroContainer}>
           <div className={styles.heroSection}>
             <div className={styles.mainHeroTitle}>
-              <span className={styles.title}>Aliaksandr Hudzilin</span>
+              <span className={styles.title}>Aliaksandr "Sasha" Hudzilin</span>
             </div>
             <div className={styles.content}>
               <img src="/media/hudzilin_3.png" alt="Aliaksandr Hudzilin" style={{ width: '100%', height: '100%' }} />
-              <p className={styles.textContainer}>Fueling the next wave of visionary entrepreneurs.</p>
+              <div className={styles.textContainer}>
+                <p>Fueling the next wave of visionary entrepreneurs.</p>
+              </div>
             </div>
           </div>
         </div>

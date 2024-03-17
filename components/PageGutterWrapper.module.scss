@@ -3,6 +3,7 @@
     max-width: var(--page-width);
     margin: 0 auto 0 auto;
     width: 100%;
+    background-color: var(--color-black);
 
     @media (max-width: 768px) {
         padding: var(--page-gutters-mobile);

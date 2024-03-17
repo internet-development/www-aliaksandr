@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background: black;
+  background: var(--color-black);
   width: 100%;
   min-height: calc(100vh - 48px);
   max-width: 1440px;

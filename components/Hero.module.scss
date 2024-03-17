@@ -5,44 +5,40 @@
 }
 
 .textContainer {
-    position: absolute;
-    top: 0;
-    left: 45%;
+    background-color: var(--color-black);
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 4rem;
-    font-size: 4rem;
+    line-height: 6rem;
+    font-size: 6rem;
     color: var(--color-white);
     font-family: 'EB-Garamond-Italic';
+    font-style: italic;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.125rem;
 
     @media (max-width: 1440px) {
-        font-size: 4rem;
-        left: 48%;
+        font-size: 5rem;
+        line-height: 5rem;
     }
 
     @media (max-width: 1250px) {
-        font-size: 3rem;
-        line-height: 3rem;
-        left: 52%;
+        font-size: 4rem;
+        line-height: 4rem;
     }
 
     @media (max-width: 1068px) {
-        font-size: 2.5rem;
-        left: 62%;
-        width: 40%;
-        line-height: 2.5rem;
-    }
-
-    @media (max-width: 900px) {
         font-size: 3rem;
         line-height: 3rem;
         position: relative;
         display: flex;
+        font-style: none;
+        letter-spacing: 0rem;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -50,6 +46,7 @@
         left: 0%;
         width: 100%;
     }
+
 
     @media (max-width: 580px) {
         text-align: center;
@@ -77,21 +74,23 @@
 .mainHeroTitle {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background-color: var(--color-black);
 }
 
 .title {
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
     display: block;
     font-family: 'Inferi-Medium';
+    background-color: var(--color-black);
 
-    @media (max-width: 1304px) {
-        font-size: 7rem;
+    @media (max-width: 1334px) {
+        font-size: 5rem;
     }
 
     @media (max-width: 1160px) {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     @media (max-width: 1068px) {
@@ -115,11 +114,9 @@
     padding-left: 10%;
     display: flex;
     align-items: center;
-    font-size: 40px;
-    font-style: italic;
-    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-black);
 
-    @media (max-width: 900px) {
+    @media (max-width: 1068px) {
         gap: 2rem;
         flex-direction: column;
         height: 100%;
