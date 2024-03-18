@@ -205,21 +205,25 @@ export function classNames(...args: any[]): string {
 export async function onListData({ key }) {
   let result;
   try {
-    const response = await fetch('https://api.internet.dev/api/data', {
+    const response = await fetch('http://localhost:10001/api/data', {
       method: 'GET',
       headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
     });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     result = await response.json();
   } catch (e) {
-    return null;
+    console.error("Failed to fetch list data:", e.message);
+    return { error: true, message: e.message };
   }
 
   if (!result) {
-    return null;
+    return { error: true, message: "No result returned from the API" };
   }
 
   if (!result.data) {
-    return null;
+    return { error: true, message: "Result does not contain 'data' field" };
   }
 
   return result;
