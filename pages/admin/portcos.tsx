@@ -15,20 +15,27 @@ import ThinAppLayoutHeader from '@system/layouts/ThinAppLayoutHeader';
 import { FormHeading, FormParagraph, InputLabel } from '@system/typography/forms';
 import { onListData, onDeleteData, onUploadData } from '@common/utilities';
 
-function ExampleFiles(props) {
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+function Portcos(props) {
   const [currentError, setError] = React.useState<string | null>(null);
   const [currentModal, setModal] = React.useState<Record<string, any> | null>(null);
   const [currentUser, setUser] = React.useState<Record<string, any> | null>(null);
   const [key, setKey] = React.useState<string>(props.sessionKey);
-  const [domain, setDomain] = React.useState<string>('internet.dev');
+  const [domain, setDomain] = React.useState<string>('sasha.page');
+  const [companyName, setCompanyName] = React.useState<string>('');
+  const [companyLink, setCompanyLink] = React.useState<string>('');
+  const [kind, setKind] = React.useState<string>('logo');
   const [files, setFiles] = React.useState([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [uploading, setUploading] = React.useState<boolean>(false);
 
   return (
     <Page
-      title="api.internet.dev: Files"
-      description="A lightweight website template to test our design system. You can view this template on GitHub and see how we write websites."
+      title="sasha.page: Portfolio Companies Upload"
+      description="A place to upload new portfolio companies and delete old ones."
       url="https://wireframes.internet.dev/examples/files"
     >
       <KeyHeader
@@ -59,7 +66,7 @@ function ExampleFiles(props) {
           style={{ margin: `24px 0 0 0`, width: '100%'}}
           onClick={async () => {
             setLoading(true);
-            const response = await onListData({ key });
+            const response = await onListData();
             setLoading(false);
 
             if (!response) {
@@ -86,7 +93,7 @@ function ExampleFiles(props) {
                 }
 
                 const response = await onDeleteData({ id: each.id, key });
-                const list = await onListData({ key });
+                const list = await onListData();
                 setUploading(false);
 
                 if (!list) {
@@ -112,11 +119,23 @@ function ExampleFiles(props) {
         <InputLabel style={{ marginTop: 24 }}>Domain (optional)</InputLabel>
         <Input autoComplete="off" onChange={(e) => setDomain(e.target.value)} style={{ marginTop: 8 }} type="text" value={domain} />
 
+        <InputLabel style={{ marginTop: 24 }}>Portfolio Company Name</InputLabel>
+        <Input autoComplete="off" onChange={(e) => setCompanyName(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyName} />
+
+        <InputLabel style={{ marginTop: 24 }}>Portfolio Company Link</InputLabel>
+        <Input autoComplete="off" onChange={(e) => setCompanyLink(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyLink} />
+
+        <InputLabel style={{ marginTop: 24 }}>Select Portfolio Company Feature</InputLabel>
+        <select onChange={(e) => setKind(e.target.value)} style={{ marginTop: 8, padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }}>
+          <option value="logo">Logo</option>
+          <option value="gradient">Gradient</option>
+        </select>
+
         <FormUpload
           loading={uploading}
           onSetFile={async (file) => {
             setUploading(true);
-            const response = await onUploadData({ file, domain, key, setModal });
+            const response = await onUploadData({ file, domain, key, setModal, fields: { site: process.env.DOMAIN, companyName, companyLink, kind } });
             if (!response) {
               setUploading(false);
               return;
@@ -128,7 +147,7 @@ function ExampleFiles(props) {
               return;
             }
 
-            const list = await onListData({ key });
+            const list = await onListData();
             setUploading(false);
 
             if (!list) {
@@ -160,26 +179,4 @@ function ExampleFiles(props) {
   );
 }
 
-export async function getServerSideProps(context) {
-  let viewer = null;
-  let sessionKey = context.req.cookies['sitekey'] || '';
-
-  try {
-    const response = await fetch('https://api.internet.dev/api/users/viewer', {
-      method: 'PUT',
-      headers: { 'X-API-KEY': sessionKey, 'Content-Type': 'application/json' },
-    });
-    const result = await response.json();
-    if (result && result.viewer) {
-      viewer = result.viewer;
-    }
-  } catch (e) {
-    return null;
-  }
-
-  return {
-    props: { sessionKey, viewer },
-  };
-}
-
-export default ExampleFiles;
+export default Portcos;

@@ -64,28 +64,7 @@ export default async function Page(props) {
   const footer = FOOTER_CONTENT;
 
   // @TODO: Replace both of these in the .env
-  const key = 'INT-f21c3473-b7a0-4b9f-88a3-DEV-e199040a-5b1e-4e88-bc0e';
-  const domain = '9a007a7e-9355-4a52-be27-7d76f8897c38';
-  const companies = await onListData({ key });
-
-  // Query files by domain
-  const filteredCompanies = companies.data.filter(company => company.organization_id === domain);
-  console.log('Filtered companies:', filteredCompanies);
-
-  // Handle parsing company files, links, etc.
-  const getCompanyLinks = (companies) => {
-    return companies
-      .map(company => {
-        const match = company.data.name.match(/(.+\..+)-logo\.png/);
-        return match ? match[1] : null;
-      })
-      .filter(link => link !== null)
-      .sort();
-  };
-
-  const companyLinks = getCompanyLinks(filteredCompanies);
-  console.log('Company links:', companyLinks);
-  
+  const companies = await onListData();
 
   return (
     <div className={styles.blockGap}>
@@ -93,6 +72,7 @@ export default async function Page(props) {
       <Hero />
       <About />
       <Investments companies={companies.data || []} />
+      
       <Thesis />
       <Submit />
       <Footer navigation={footer} />

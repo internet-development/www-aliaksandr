@@ -1,5 +1,9 @@
 import * as Constants from '@common/constants';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const hasOwn = {}.hasOwnProperty;
 const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
 const nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
@@ -202,17 +206,22 @@ export function classNames(...args: any[]): string {
   return classes.join(' ');
 }
 
-export async function onListData({ key }) {
+export async function onListData() {
   let result;
+  const key = 'INT-f21c3473-b7a0-4b9f-88a3-DEV-e199040a-5b1e-4e88-bc0e' || '';
+  const domain = 'sasha.page.test' || '';
+
   try {
     const response = await fetch('http://localhost:10001/api/data', {
-      method: 'GET',
+      method: 'POST',
       headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ site: domain }),
     });
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}, message: ${response.statusText}`);
     }
     result = await response.json();
+    console.log(result);
   } catch (e) {
     console.error("Failed to fetch list data:", e.message);
     return { error: true, message: e.message };
@@ -253,7 +262,7 @@ export async function onDeleteData({ id, key }) {
   return result;
 }
 
-export async function onUploadData({ file, domain, key, setModal }) {
+export async function onUploadData({ file, domain, key, setModal, fields }) {
   let signedResult;
   const name = file.name;
   const type = file.type;
@@ -265,13 +274,13 @@ export async function onUploadData({ file, domain, key, setModal }) {
   }
 
   try {
-    const signedResponse = await fetch(`https://api.internet.dev/api/data/generate-presigned-url`, {
+    const signedResponse = await fetch(`http://localhost:10001/api/data/generate-presigned-url`, {
       method: 'POST',
       headers: {
         'X-API-KEY': key,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ type, domain: domain, file: name, size }),
+      body: JSON.stringify({ type, domain: domain, file: name, size, fields }),
     });
     signedResult = await signedResponse.json();
   } catch (e) {
