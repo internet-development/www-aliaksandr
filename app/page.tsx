@@ -63,7 +63,6 @@ export default async function Page(props) {
   const navigation = NAVIGATION_HOMEPAGE_CONTENT;
   const footer = FOOTER_CONTENT;
 
-  // @TODO: Replace both of these in the .env
   const companies = await onListData();
 
   return (
@@ -72,7 +71,6 @@ export default async function Page(props) {
       <Hero />
       <About />
       <Investments companies={companies.data || []} />
-      
       <Thesis />
       <Submit />
       <Footer navigation={footer} />
