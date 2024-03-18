@@ -15,11 +15,11 @@ import Thesis from '@root/components/Thesis';
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
   const description = Package.description;
-  const url = 'https://hudzilin.vc';
+  const url = 'https://sasha.page';
   const handle = '@AliaksandrH';
 
   return {
-    metadataBase: new URL('https://hudzilin.vc'),
+    metadataBase: new URL('https://sasha.page'),
     title,
     description,
     url,
