@@ -11,8 +11,8 @@ import PageGutterWrapper from './PageGutterWrapper';
 import ParasSVG from './svgs/ParasSVG';
 import styles from './Investments.module.scss';
 import SyndicateSVG from './svgs/SyndicateSVG';
+import FluentlySVG from './svgs/Fluently';
 
-import { onListData } from '@common/utilities';
 import { FadeInSection } from '@components/FadeInSection';
 
 export default function Investments() {
@@ -41,6 +41,7 @@ export default function Investments() {
             backgroundImage={'/media/fraction-gradient.png'}
           />
           <Company companyLink={'https://www.atlaszk.com/'} companyName={'atlaszk.com'} svgComponent={<AtlasSVG width="75%" />} backgroundImage={'/media/atlas-gradient.png'} />
+          <Company companyLink={'https://getfluently.app/'} companyName={'getfluently.app'} svgComponent={<FluentlySVG width="75%" />} backgroundImage={'/media/carv-gradient.png'}></Company>
         </div>
       </PageGutterWrapper>
     </div>
