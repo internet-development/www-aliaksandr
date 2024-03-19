@@ -29,9 +29,7 @@ export default function Submit() {
             </div>
             <div className={styles.follow}>
               <div className={styles.followText}>Connect on LinkedIn</div>
-              <Link href={'https://www.linkedin.com/in/aliaksandrhudzilin'}>
-                <div className={styles.followbutton}>Connect</div>
-              </Link>
+                <a href={'https://www.linkedin.com/in/aliaksandrhudzilin'} className={styles.followbutton}>Connect</a>
             </div>
           </div>
         </div>
