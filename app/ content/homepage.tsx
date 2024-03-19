@@ -20,7 +20,7 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       image: '/media/linkedIn.png',
     },
     {
-      href: 'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+      href: 'https://twitter.com/SashaAngel87',
       text: 'X',
       image: '/media/x_small.png',
     },
@@ -48,7 +48,7 @@ export const FOOTER_CONTENT = {
       image: '/media/linkedIn.png',
     },
     {
-      href: 'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+      href: 'https://twitter.com/SashaAngel87',
       text: 'X',
       image: '/media/x_small.png',
     },

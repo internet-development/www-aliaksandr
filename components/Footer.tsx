@@ -49,7 +49,7 @@ export default function Footer({ navigation }) {
                 <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/" target="_blank">
                   <LinkedInSVG className={styles.socialIcon} />
                 </Link>
-                <Link href="https://twitter.com/AliaksandrH" target="_blank">
+                <Link href="https://twitter.com/SashaAngel87" target="_blank">
                   <XSVG className={styles.socialIcon} />
                 </Link>
               </div>

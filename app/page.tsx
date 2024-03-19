@@ -16,7 +16,7 @@ export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
   const description = Package.description;
   const url = 'https://sasha.page';
-  const handle = '@AliaksandrH';
+  const handle = '@SashaAngel87';
 
   return {
     metadataBase: new URL('https://sasha.page'),

@@ -35,7 +35,7 @@ export default function Navbar({ navigation }) {
               <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/" target="_blank">
                 <LinkedInSVG className={styles.socialImage} />
               </Link>
-              <Link href="https://twitter.com/AliaksandrH" target="_blank">
+              <Link href="https://twitter.com/SashaAngel87" target="_blank">
                 <XSVG className={styles.socialImage} />
               </Link>
             </div>

@@ -23,7 +23,7 @@ export default function Submit() {
           <div className={styles.followContainer}>
             <div className={styles.follow}>
               <div className={styles.followText}>Follow me on X</div>
-              <Link href={'https://twitter.com/AliaksandrH?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'}>
+              <Link href={'https://twitter.com/SashaAngel87'}>
                 <div className={styles.followbutton}>Follow</div>
               </Link>
             </div>
