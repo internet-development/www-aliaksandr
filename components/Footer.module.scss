@@ -17,7 +17,7 @@
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
 
-    @media (pointer: fine) and (hover: hover) {
+    &:hover {
         color: var(--color-grey);
     }
 
@@ -114,7 +114,7 @@
     color: var(--color-white);
     transition: 0.3s ease;
 
-    @media (pointer: fine) and (hover: hover) {
+    &:hover {
         color: var(--color-grey);
     }
 }
@@ -187,7 +187,7 @@
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
     
-    @media (pointer: fine) and (hover: hover) {
-        color: var(--color-grey);
+    &:hover {
+        color: var(--color-grey); /* Darker shade of black for the hover state */
     }
 }

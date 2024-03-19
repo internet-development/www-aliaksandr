@@ -26,7 +26,7 @@
     color: var(--theme-button-color);
   }
 
-  @media (pointer: fine) and (hover: hover) {
+  &:hover {
     box-shadow: var(--theme-button-shadow-hover);
   }
 }

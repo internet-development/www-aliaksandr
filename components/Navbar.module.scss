@@ -64,7 +64,7 @@
 .link {
     color: var(--color-white);
     transition: 0.3s ease;
-    @media (pointer: fine) and (hover: hover) {
+    &:hover {
         color: var(--color-grey);
     }
 }
