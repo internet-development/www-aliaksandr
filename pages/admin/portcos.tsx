@@ -1,3 +1,4 @@
+import * as Constants from '@common/constants';
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
@@ -13,10 +14,111 @@ import ThinAppLayout from '@system/layouts/ThinAppLayout';
 import ThinAppLayoutHeader from '@system/layouts/ThinAppLayoutHeader';
 
 import { FormHeading, FormParagraph, InputLabel } from '@system/typography/forms';
-import { onListData, onDeleteData, onUploadData } from '@common/utilities';
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+async function onListData({ key, domain }) {
+  let result;
+
+  try {
+    const response = await fetch('http://localhost:10001/api/data', {
+      method: 'POST',
+      headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ site: domain }),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}, message: ${response.statusText}`);
+    }
+    result = await response.json();
+    console.log(result);
+  } catch (e) {
+    console.error('Failed to fetch list data:', e.message);
+    return { error: true, message: e.message };
+  }
+
+  if (!result) {
+    return { error: true, message: 'No result returned from the API' };
+  }
+
+  if (!result.data) {
+    return { error: true, message: "Result does not contain 'data' field" };
+  }
+
+  return result;
+}
+
+async function onDeleteData({ id, key }) {
+  let result;
+  try {
+    const response = await fetch('https://api.internet.dev/api/data/delete', {
+      method: 'DELETE',
+      headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id }),
+    });
+    result = await response.json();
+  } catch (e) {
+    return null;
+  }
+
+  if (!result) {
+    return null;
+  }
+
+  if (result.error) {
+    return null;
+  }
+
+  return result;
+}
+
+export async function onUploadData({ file, domain, key, setModal, fields }) {
+  let signedResult;
+  const name = file.name;
+  const type = file.type;
+  const size = file.size;
+
+  if (size > Constants.MAX_SIZE_BYTES) {
+    setModal({ name: 'ERROR', message: 'File size exceeds 15mb limit' });
+    return;
+  }
+
+  try {
+    const signedResponse = await fetch(`http://localhost:10001/api/data/generate-presigned-url`, {
+      method: 'POST',
+      headers: {
+        'X-API-KEY': key,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ type, domain: domain, file: name, size, fields }),
+    });
+    signedResult = await signedResponse.json();
+  } catch (e) {
+    return null;
+  }
+
+  if (!signedResult) {
+    setModal({ name: 'ERROR', message: 'Failed to upload.' });
+    return null;
+  }
+
+  if (signedResult.error) {
+    setModal({ name: 'ERROR', message: signedResult.message });
+    return null;
+  }
+
+  if (!signedResult.uploadURL) {
+    setModal({ name: 'ERROR', message: 'Failed to upload your data.' });
+    return null;
+  }
+
+  try {
+    fetch(signedResult.uploadURL, {
+      method: 'PUT',
+      body: file,
+    });
+  } catch (e) {
+    return null;
+  }
+
+  return signedResult;
 }
 
 function Portcos(props) {
@@ -24,7 +126,7 @@ function Portcos(props) {
   const [currentModal, setModal] = React.useState<Record<string, any> | null>(null);
   const [currentUser, setUser] = React.useState<Record<string, any> | null>(null);
   const [key, setKey] = React.useState<string>(props.sessionKey);
-  const [domain, setDomain] = React.useState<string>('sasha.page');
+  const [domain, setDomain] = React.useState<string>('sasha.page.test');
   const [companyName, setCompanyName] = React.useState<string>('');
   const [companyLink, setCompanyLink] = React.useState<string>('');
   const [kind, setKind] = React.useState<string>('logo');
@@ -63,16 +165,25 @@ function Portcos(props) {
         <FormHeading style={{ marginTop: 64 }}>Files</FormHeading>
         <FormParagraph>Organize files you have uploaded using this template.</FormParagraph>
         <Button
-          style={{ margin: `24px 0 0 0`, width: '100%'}}
+          style={{ margin: `24px 0 0 0`, width: '100%' }}
           onClick={async () => {
             setLoading(true);
-            const response = await onListData();
-            setLoading(false);
-
-            if (!response) {
+            let response;
+            try {
+              response = await onListData({ key, domain });
+            } catch (error) {
               setModal({
                 name: 'ERROR',
-                message: 'Something went wrong but we are too lazy to tell you.',
+                message: 'An error has occurred. Enter your API key and try again.',
+              });
+              response = null;
+            }
+            setLoading(false);
+
+            if (!response || response.error === true) {
+              setModal({
+                name: 'ERROR',
+                message: 'An error has occurred. Enter your API key and try again.',
               });
               return;
             }
@@ -82,7 +193,7 @@ function Portcos(props) {
         >
           List files
         </Button>
-        {files.map((each: Record<string, any>) => {
+        {files && files.map((each: Record<string, any>) => {
           return (
             <MonospacePreview
               key={each.id}
@@ -93,7 +204,7 @@ function Portcos(props) {
                 }
 
                 const response = await onDeleteData({ id: each.id, key });
-                const list = await onListData();
+                const list = await onListData({ key, domain });
                 setUploading(false);
 
                 if (!list) {
@@ -147,7 +258,7 @@ function Portcos(props) {
               return;
             }
 
-            const list = await onListData();
+            const list = await onListData({ key, domain });
             setUploading(false);
 
             if (!list) {
@@ -177,6 +288,28 @@ function Portcos(props) {
       />
     </Page>
   );
+}
+
+export async function getServerSideProps(context) {
+  let viewer = null;
+  let sessionKey = context.req.cookies['sitekey'] || '';
+
+  try {
+    const response = await fetch('https://api.internet.dev/api/users/viewer', {
+      method: 'PUT',
+      headers: { 'X-API-KEY': sessionKey, 'Content-Type': 'application/json' },
+    });
+    const result = await response.json();
+    if (result && result.viewer) {
+      viewer = result.viewer;
+    }
+  } catch (e) {
+    return null;
+  }
+
+  return {
+    props: { sessionKey, viewer },
+  };
 }
 
 export default Portcos;
