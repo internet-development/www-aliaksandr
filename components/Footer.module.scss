@@ -17,8 +17,10 @@
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
 
-    &:hover {
-        color: var(--color-grey);
+    @media (pointer: fine) {
+        &:hover {
+            color: var(--color-grey);
+        }
     }
 
     @media (max-width: 768px) {
@@ -114,8 +116,10 @@
     color: var(--color-white);
     transition: 0.3s ease;
 
-    &:hover {
-        color: var(--color-grey);
+    @media (pointer: fine) {
+        &:hover {
+            color: var(--color-grey);
+        }
     }
 }
 
@@ -187,7 +191,9 @@
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
     
-    &:hover {
-        color: var(--color-grey); /* Darker shade of black for the hover state */
+    @media (pointer: fine) {
+        &:hover {
+            color: var(--color-grey);
+        }
     }
 }

@@ -56,15 +56,19 @@
     color: var(--color-white);
     transition: 0.3s ease;
 
-    &:hover {
-        color: var(--color-grey);
+    @media (pointer: fine) {
+        &:hover {
+            color: var(--color-grey);
+        }
     }
 }
 
 .link {
     color: var(--color-white);
     transition: 0.3s ease;
-    &:hover {
-        color: var(--color-grey);
+    @media (pointer: fine) {
+        &:hover {
+            color: var(--color-grey);
+        }
     }
 }
