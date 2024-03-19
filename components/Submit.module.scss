@@ -58,12 +58,14 @@
     padding: 3.125rem 0rem 3.125rem 0rem;
   }
 
-  &:hover {
-    color: var(--color-white);
-    --submit-color: var(--color-white);
-    --submit-text-color: var(--color-black);
-    --submit-title-color: var(--color-white);
-    --background-opacity: 1;
+  @media (pointer: fine) {
+    &:hover {
+      color: var(--color-white);
+      --submit-color: var(--color-white);
+      --submit-text-color: var(--color-black);
+      --submit-title-color: var(--color-white);
+      --background-opacity: 1;
+    }
   }
 
   .submitbutton {
@@ -201,8 +203,10 @@
   transition: 0.5s ease;
   text-decoration: none;
 
-  &:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
   }
 }
