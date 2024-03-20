@@ -14,7 +14,6 @@ export default function Navbar({ navigation }) {
       <PageGutterWrapper>
         <FadeInSection order={2}>
           <nav className={styles.navbar}>
-            {/* Navbar should be smaller; text size, space out */}
             {navigation?.links && (
               <div className={styles.navLinks}>
                 {navigation.links.slice(0, 3).map((link, index) => {
@@ -32,6 +31,12 @@ export default function Navbar({ navigation }) {
             )}
 
             <div className={styles.socialLinks}>
+              <div className={styles.applyLink}>
+                <span>Apply to join my portfolio</span>
+              </div>
+              <Link href="https://airtable.com/appca6jUjuI1jI1Hj/pagG1PZA9gznFI87l/form" target="_blank">
+                <button className={styles.submitFormButton}>Submit Form</button>
+              </Link>
               <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/" target="_blank">
                 <LinkedInSVG className={styles.socialImage} />
               </Link>
