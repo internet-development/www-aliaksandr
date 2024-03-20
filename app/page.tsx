@@ -58,28 +58,32 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
+async function fetchDataFromAPI() {
+  const api_key = process.env.FILE_API_KEY || '';
+  const site = process.env.DOMAIN || 'sasha.page';
+  const response = await fetch('https://api.internet.dev/api/data', {
+    method: 'POST',
+    headers: {
+      'X-API-KEY': api_key,
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+    },
+    body: JSON.stringify({ site }),
+  });
+  const data = await response.json();
+  return data;
+}
+
 export default async function Page(props) {
   const navigation = NAVIGATION_HOMEPAGE_CONTENT;
   const footer = FOOTER_CONTENT;
 
   let data = { companies: [] };
-
-  const api_key = process.env.FILE_API_KEY || '';
-  const domain = process.env.DOMAIN || 'sasha.page';
-
-  console.log(api_key);
-  console.log(domain);
-
+  
   try {
-    const response = await fetch('https://api.internet.dev/api/data', {
-      method: 'POST',
-      headers: { 'X-API-KEY': api_key, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ site: domain }),
-    });
-    const result = await response.json();
-    if (result && result.data) {
-      console.log(result.data);
-      data = { companies: result.data };
+    const response = await fetchDataFromAPI();
+    if (response && response.data) {
+      data = { companies: response.data };
     }
   } catch (e) {
     console.error('Failed to fetch list data:', e.message);

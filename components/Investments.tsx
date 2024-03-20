@@ -7,7 +7,6 @@ import styles from './Investments.module.scss';
 import { FadeInSection } from '@components/FadeInSection'
 
 export default function Investments({ data }) {
-  console.log("Company metadata sample", data.companies[0].data)
   const backgroundImages = [
     '/media/carv-gradient.png',
     '/media/here-gradient.png',

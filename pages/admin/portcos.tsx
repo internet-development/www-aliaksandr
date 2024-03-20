@@ -10,6 +10,7 @@ import Input from '@system/Input';
 import KeyHeader from '@system/KeyHeader';
 import MonospacePreview from '@system/MonospacePreview';
 import Page from '@components/Page';
+import PasswordProtection from '@system/PasswordProtection';
 import ThinAppLayout from '@system/layouts/ThinAppLayout';
 import ThinAppLayoutHeader from '@system/layouts/ThinAppLayoutHeader';
 
@@ -28,7 +29,6 @@ async function onListData({ key, domain }) {
       throw new Error(`HTTP error! status: ${response.status}, message: ${response.statusText}`);
     }
     result = await response.json();
-    console.log(result);
   } catch (e) {
     console.error('Failed to fetch list data:', e.message);
     return { error: true, message: e.message };
@@ -134,22 +134,141 @@ function Portcos(props) {
   const [uploading, setUploading] = React.useState<boolean>(false);
 
   return (
-    <Page
-      title="sasha.page: Portfolio Companies Upload"
-      description="A place to upload new portfolio companies and delete old ones."
-      url="https://wireframes.internet.dev/examples/files"
-    >
-      <KeyHeader
-        isModalVisible={!!currentModal}
-        onInputChange={setKey}
-        onHandleHideSubNavigation={() => setModal(null)}
-        onHandleShowSubNavigation={() => setModal({ name: 'NAVIGATION_TEMPLATE', parentId: 'site-navigation-button' })}
-        value={key}
-      />
+    <PasswordProtection>
+      <Page
+        title="sasha.page: Portfolio Companies Upload"
+        description="A place to upload new portfolio companies and delete old ones."
+        url="https://wireframes.internet.dev/examples/files"
+      >
+        <KeyHeader
+          isModalVisible={!!currentModal}
+          onInputChange={setKey}
+          onHandleHideSubNavigation={() => setModal(null)}
+          onHandleShowSubNavigation={() => setModal({ name: 'NAVIGATION_TEMPLATE', parentId: 'site-navigation-button' })}
+          value={key}
+        />
 
-      <ThinAppLayout>
-        <ThinAppLayoutHeader
-          token={key}
+        <ThinAppLayout>
+          <ThinAppLayoutHeader
+            token={key}
+            onSignOut={() => {
+              const confirm = window.confirm('Are you sure you want to sign out?');
+              if (!confirm) {
+                return;
+              }
+
+              setKey('');
+              Cookies.remove('sitekey');
+              window.location.reload();
+            }}
+          />
+          <FormHeading style={{ marginTop: 64 }}>Files</FormHeading>
+          <FormParagraph>Organize files you have uploaded using this template.</FormParagraph>
+          <Button
+            style={{ margin: `24px 0 0 0`, width: '100%' }}
+            onClick={async () => {
+              setLoading(true);
+              let response;
+              try {
+                response = await onListData({ key, domain });
+              } catch (error) {
+                setModal({
+                  name: 'ERROR',
+                  message: 'An error has occurred. Enter your API key and try again.',
+                });
+                response = null;
+              }
+              setLoading(false);
+
+              if (!response || response.error === true) {
+                setModal({
+                  name: 'ERROR',
+                  message: 'An error has occurred. Enter your API key and try again.',
+                });
+                return;
+              }
+
+              setFiles(response.data);
+            }}
+          >
+            List files
+          </Button>
+          {files &&
+            files.map((each: Record<string, any>) => {
+              return (
+                <MonospacePreview
+                  key={each.id}
+                  onDelete={async () => {
+                    const confirm = window.confirm(`Are you sure you want to delete ${each.data.src}? This action is irreversible.`);
+                    if (!confirm) {
+                      return;
+                    }
+
+                    const response = await onDeleteData({ id: each.id, key });
+                    const list = await onListData({ key, domain });
+                    setUploading(false);
+
+                    if (!list) {
+                      return;
+                    }
+
+                    setFiles(list.data);
+                  }}
+                  style={{ marginTop: 16 }}
+                  title={each.data.type}
+                >
+                  {JSON.stringify(each, null, 2)}
+                </MonospacePreview>
+              );
+            })}
+
+          <FormHeading style={{ marginTop: 64, color: 'var(--color-white)' }}>Upload</FormHeading>
+          <FormParagraph>
+            The following steps represent whether or not you have permissions to upload a file. To upload a file you need to be part of an organization and have been granted
+            permissions.
+          </FormParagraph>
+
+          <InputLabel style={{ marginTop: 24 }}>Domain (optional)</InputLabel>
+          <Input autoComplete="off" onChange={(e) => setDomain(e.target.value)} style={{ marginTop: 8 }} type="text" value={domain} />
+
+          <InputLabel style={{ marginTop: 24 }}>Portfolio Company Name</InputLabel>
+          <Input autoComplete="off" onChange={(e) => setCompanyName(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyName} />
+
+          <InputLabel style={{ marginTop: 24 }}>Portfolio Company Link</InputLabel>
+          <Input autoComplete="off" onChange={(e) => setCompanyLink(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyLink} />
+
+          <FormUpload
+            loading={uploading}
+            onSetFile={async (file) => {
+              setUploading(true);
+              const response = await onUploadData({ file, domain, key, setModal, fields: { site: domain, companyName, companyLink } });
+              if (!response) {
+                setUploading(false);
+                return;
+              }
+
+              if (response.error) {
+                setUploading(false);
+                setModal({ name: 'ERROR', message: response.message });
+                return;
+              }
+
+              const list = await onListData({ key, domain });
+              setUploading(false);
+
+              if (!list) {
+                return;
+              }
+
+              setFiles(list.data);
+            }}
+            style={{ marginTop: 24 }}
+          />
+        </ThinAppLayout>
+        <GlobalModalManager
+          currentModal={currentModal}
+          onHandleThemeChange={Utilities.onHandleThemeChange}
+          onSetModal={setModal}
           onSignOut={() => {
             const confirm = window.confirm('Are you sure you want to sign out?');
             if (!confirm) {
@@ -160,126 +279,10 @@ function Portcos(props) {
             Cookies.remove('sitekey');
             window.location.reload();
           }}
+          viewer={props.viewer}
         />
-        <FormHeading style={{ marginTop: 64 }}>Files</FormHeading>
-        <FormParagraph>Organize files you have uploaded using this template.</FormParagraph>
-        <Button
-          style={{ margin: `24px 0 0 0`, width: '100%' }}
-          onClick={async () => {
-            setLoading(true);
-            let response;
-            try {
-              response = await onListData({ key, domain });
-            } catch (error) {
-              setModal({
-                name: 'ERROR',
-                message: 'An error has occurred. Enter your API key and try again.',
-              });
-              response = null;
-            }
-            setLoading(false);
-
-            if (!response || response.error === true) {
-              setModal({
-                name: 'ERROR',
-                message: 'An error has occurred. Enter your API key and try again.',
-              });
-              return;
-            }
-
-            setFiles(response.data);
-          }}
-        >
-          List files
-        </Button>
-        {files && files.map((each: Record<string, any>) => {
-          return (
-            <MonospacePreview
-              key={each.id}
-              onDelete={async () => {
-                const confirm = window.confirm(`Are you sure you want to delete ${each.data.src}? This action is irreversible.`);
-                if (!confirm) {
-                  return;
-                }
-
-                const response = await onDeleteData({ id: each.id, key });
-                const list = await onListData({ key, domain });
-                setUploading(false);
-
-                if (!list) {
-                  return;
-                }
-
-                setFiles(list.data);
-              }}
-              style={{ marginTop: 16 }}
-              title={each.data.type}
-            >
-              {JSON.stringify(each, null, 2)}
-            </MonospacePreview>
-          );
-        })}
-
-        <FormHeading style={{ marginTop: 64, color: 'var(--color-white)' }}>Upload</FormHeading>
-        <FormParagraph>
-          The following steps represent whether or not you have permissions to upload a file. To upload a file you need to be part of an organization and have been granted
-          permissions.
-        </FormParagraph>
-
-        <InputLabel style={{ marginTop: 24 }}>Domain (optional)</InputLabel>
-        <Input autoComplete="off" onChange={(e) => setDomain(e.target.value)} style={{ marginTop: 8 }} type="text" value={domain} />
-
-        <InputLabel style={{ marginTop: 24 }}>Portfolio Company Name</InputLabel>
-        <Input autoComplete="off" onChange={(e) => setCompanyName(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyName} />
-
-        <InputLabel style={{ marginTop: 24 }}>Portfolio Company Link</InputLabel>
-        <Input autoComplete="off" onChange={(e) => setCompanyLink(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyLink} />
-
-        <FormUpload
-          loading={uploading}
-          onSetFile={async (file) => {
-            setUploading(true);
-            const response = await onUploadData({ file, domain, key, setModal, fields: { site: domain, companyName, companyLink } });
-            if (!response) {
-              setUploading(false);
-              return;
-            }
-
-            if (response.error) {
-              setUploading(false);
-              setModal({ name: 'ERROR', message: response.message });
-              return;
-            }
-
-            const list = await onListData({ key, domain });
-            setUploading(false);
-
-            if (!list) {
-              return;
-            }
-
-            setFiles(list.data);
-          }}
-          style={{ marginTop: 24 }}
-        />
-      </ThinAppLayout>
-      <GlobalModalManager
-        currentModal={currentModal}
-        onHandleThemeChange={Utilities.onHandleThemeChange}
-        onSetModal={setModal}
-        onSignOut={() => {
-          const confirm = window.confirm('Are you sure you want to sign out?');
-          if (!confirm) {
-            return;
-          }
-
-          setKey('');
-          Cookies.remove('sitekey');
-          window.location.reload();
-        }}
-        viewer={props.viewer}
-      />
-    </Page>
+      </Page>
+    </PasswordProtection>
   );
 }
 
