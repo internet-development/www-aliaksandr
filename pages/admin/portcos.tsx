@@ -234,7 +234,7 @@ function Portcos(props) {
           <InputLabel style={{ marginTop: 24 }}>Portfolio Company Name</InputLabel>
           <Input autoComplete="off" onChange={(e) => setCompanyName(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyName} />
 
-          <InputLabel style={{ marginTop: 24 }}>Portfolio Company Link</InputLabel>
+          <InputLabel style={{ marginTop: 24 }}>Portfolio Company URI (e.g. atlaszk.com)</InputLabel>
           <Input autoComplete="off" onChange={(e) => setCompanyLink(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyLink} />
 
           <FormUpload
