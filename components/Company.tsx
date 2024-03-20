@@ -4,8 +4,10 @@ import Link from './Link';
 import { FadeInSection } from '@components/FadeInSection';
 
 export default function Company({ companyLink, companyName, companyLogo, backgroundImage }) {
+  const companyURL = `https://${companyLink}`;
+
   return (
-    <Link href={companyLink} target="_blank">
+    <Link href={companyURL} target="_blank">
       <FadeInSection>
         <div className={styles.boxContainer}>
           <div className={styles.backgroundImageContainer}>
