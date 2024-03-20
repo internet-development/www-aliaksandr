@@ -37,6 +37,9 @@ export default function Navbar({ navigation }) {
               <Link href="https://airtable.com/appca6jUjuI1jI1Hj/pagG1PZA9gznFI87l/form" target="_blank">
                 <button className={styles.submitFormButton}>Submit Form</button>
               </Link>
+              <Link className={styles.joinPortfolioLink} href="https://airtable.com/appca6jUjuI1jI1Hj/pagG1PZA9gznFI87l/form" target="_blank">
+                <button className={styles.joinPortfolioButton}>Join my Portfolio</button>
+              </Link>
               <Link href="https://www.linkedin.com/in/aliaksandrhudzilin/" target="_blank">
                 <LinkedInSVG className={styles.socialImage} />
               </Link>
