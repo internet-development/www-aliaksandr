@@ -18,6 +18,7 @@
 .applyLink {
     color: var(--color-grey);
     font-family: "SF-Pro-Display-Regular";
+    text-align: center;
 
     @media (max-width: 1068px) {
         display: none;
@@ -112,6 +113,7 @@
 .socialImage {
     color: var(--color-white);
     transition: 0.3s ease;
+    margin-top: 4px;
 
     @media (pointer: fine) {
         &:hover {
