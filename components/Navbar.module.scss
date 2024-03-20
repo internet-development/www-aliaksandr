@@ -18,6 +18,10 @@
 .applyLink {
     color: var(--color-grey);
     font-family: "SF-Pro-Display-Regular";
+
+    @media (max-width: 1068px) {
+        display: none;
+    }
 }
 
 .submitFormButton {
@@ -36,6 +40,10 @@
             background-color: var(--color-yellow);
             color: var(--color-black);
         }
+    }
+    
+    @media (max-width: 768px) {
+        display: none;
     }
 }
 
