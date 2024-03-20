@@ -1,7 +1,5 @@
 import '@root/global.scss';
 
-import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './ content/homepage';
-
 import About from '@root/components/About';
 import Footer from '@root/components/Footer';
 import Hero from '@root/components/Hero';
@@ -11,6 +9,8 @@ import Package from '@root/package.json';
 import styles from '@components/DefaultLayout.module.scss';
 import Submit from '@root/components/Submit';
 import Thesis from '@root/components/Thesis';
+
+import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './content/homepage';
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
@@ -58,16 +58,43 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
+async function fetchDataFromAPI() {
+  const api_key = process.env.FILE_API_KEY || '';
+  const site = process.env.DOMAIN || 'sasha.page';
+  const response = await fetch('https://api.internet.dev/api/data', {
+    method: 'POST',
+    headers: {
+      'X-API-KEY': api_key,
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+    },
+    body: JSON.stringify({ site }),
+  });
+  const data = await response.json();
+  return data;
+}
+
 export default async function Page(props) {
   const navigation = NAVIGATION_HOMEPAGE_CONTENT;
   const footer = FOOTER_CONTENT;
+
+  let data = { companies: [] };
+  
+  try {
+    const response = await fetchDataFromAPI();
+    if (response && response.data) {
+      data = { companies: response.data };
+    }
+  } catch (e) {
+    console.error('Failed to fetch list data:', e.message);
+  }
 
   return (
     <div className={styles.blockGap}>
       <Navbar navigation={navigation} />
       <Hero />
       <About />
-      <Investments />
+      <Investments data={data} />
       <Thesis />
       <Submit />
       <Footer navigation={footer} />

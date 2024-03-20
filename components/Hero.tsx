@@ -16,7 +16,7 @@ export default function Hero() {
               <span className={styles.title}>Aliaksandr "Sasha" Hudzilin</span>
             </div>
             <div className={styles.content}>
-              <img src="/media/hudzilin_4.png" alt="Aliaksandr Hudzilin" style={{ width: '100%', height: '100%', backgroundColor: '#000000' }} />
+              <img src="/media/hudzilin_5.png" alt="Aliaksandr Hudzilin" className={styles.heroImage} />
               <div className={styles.textContainer}>
                 <p>Fueling the next wave of visionary entrepreneurs.</p>
               </div>

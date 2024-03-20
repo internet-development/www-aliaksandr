@@ -2,8 +2,8 @@ export default function FractionSVG(props) {
   return (
     <svg {...props} width={props.width ?? '219'} height={props.height ?? '40'} viewBox="0 0 219 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M23.1533 0C21.7904 1.91632 20.9888 4.25982 20.9888 6.7905C20.9888 13.2683 26.2401 18.5196 32.7179 18.5196C35.2485 18.5196 37.5921 17.718 39.5084 16.3551V34.5698C39.5084 37.2973 37.2973 39.5084 34.5698 39.5084H4.93855C2.21106 39.5084 0 37.2973 0 34.5698V4.93855C0 2.21106 2.21106 0 4.93855 0H23.1533Z"
         fill="#FFF6E5"
       />
