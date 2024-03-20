@@ -10,8 +10,7 @@ import styles from '@components/DefaultLayout.module.scss';
 import Submit from '@root/components/Submit';
 import Thesis from '@root/components/Thesis';
 
-import { useState, useEffect } from 'react';
-import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './ content/homepage';
+import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './content/homepage';
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
@@ -66,22 +65,20 @@ export default async function Page(props) {
   let data = { companies: [] };
 
   const api_key = process.env.FILE_API_KEY || '';
-  const domain = process.env.DOMAIN || 'sasha.page.test';
+  const domain = process.env.DOMAIN || 'sasha.page';
 
-  console.log('api_key', api_key);
-  console.log('domain', domain);
+  console.log(api_key);
+  console.log(domain);
 
   try {
-    const response = await fetch('http://localhost:10001/api/data', {
+    const response = await fetch('https://api.internet.dev/api/data', {
       method: 'POST',
       headers: { 'X-API-KEY': api_key, 'Content-Type': 'application/json' },
       body: JSON.stringify({ site: domain }),
     });
-    console.log('data', data);
     const result = await response.json();
-    console.log('Response Status:', response.status);
-    console.log('Response Data:', result);
     if (result && result.data) {
+      console.log(result.data);
       data = { companies: result.data };
     }
   } catch (e) {

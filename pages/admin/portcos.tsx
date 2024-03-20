@@ -19,7 +19,7 @@ async function onListData({ key, domain }) {
   let result;
 
   try {
-    const response = await fetch('http://localhost:10001/api/data', {
+    const response = await fetch('https://api.internet.dev/api/data', {
       method: 'POST',
       headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
       body: JSON.stringify({ site: domain }),
@@ -81,7 +81,7 @@ export async function onUploadData({ file, domain, key, setModal, fields }) {
   }
 
   try {
-    const signedResponse = await fetch(`http://localhost:10001/api/data/generate-presigned-url`, {
+    const signedResponse = await fetch(`https://api.internet.dev/api/data/generate-presigned-url`, {
       method: 'POST',
       headers: {
         'X-API-KEY': key,
@@ -126,10 +126,9 @@ function Portcos(props) {
   const [currentModal, setModal] = React.useState<Record<string, any> | null>(null);
   const [currentUser, setUser] = React.useState<Record<string, any> | null>(null);
   const [key, setKey] = React.useState<string>(props.sessionKey);
-  const [domain, setDomain] = React.useState<string>('sasha.page.test');
+  const [domain, setDomain] = React.useState<string>('sasha.page');
   const [companyName, setCompanyName] = React.useState<string>('');
   const [companyLink, setCompanyLink] = React.useState<string>('');
-  const [kind, setKind] = React.useState<string>('logo');
   const [files, setFiles] = React.useState([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [uploading, setUploading] = React.useState<boolean>(false);
@@ -236,17 +235,11 @@ function Portcos(props) {
         <InputLabel style={{ marginTop: 24 }}>Portfolio Company Link</InputLabel>
         <Input autoComplete="off" onChange={(e) => setCompanyLink(e.target.value)} style={{ marginTop: 8 }} type="text" value={companyLink} />
 
-        <InputLabel style={{ marginTop: 24 }}>Select Portfolio Company Feature</InputLabel>
-        <select onChange={(e) => setKind(e.target.value)} style={{ marginTop: 8, padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }}>
-          <option value="logo">Logo</option>
-          <option value="gradient">Gradient</option>
-        </select>
-
         <FormUpload
           loading={uploading}
           onSetFile={async (file) => {
             setUploading(true);
-            const response = await onUploadData({ file, domain, key, setModal, fields: { site: process.env.DOMAIN, companyName, companyLink, kind } });
+            const response = await onUploadData({ file, domain, key, setModal, fields: { site: domain, companyName, companyLink } });
             if (!response) {
               setUploading(false);
               return;

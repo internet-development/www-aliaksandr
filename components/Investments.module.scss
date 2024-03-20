@@ -9,6 +9,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     position: relative;
+    align-items: center;
 
     @media (max-width: 1050px) {
         display: grid;

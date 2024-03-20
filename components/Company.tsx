@@ -4,6 +4,7 @@ import Link from './Link';
 import { FadeInSection } from '@components/FadeInSection';
 
 export default function Company({ companyLink, companyName, companyLogo, backgroundImage }) {
+  console.log(companyLogo);
   return (
     <Link href={companyLink} target="_blank">
       <FadeInSection>
@@ -13,7 +14,7 @@ export default function Company({ companyLink, companyName, companyLogo, backgro
           </div>
           <div className={styles.box}>
             <img src={companyLogo} alt="company logo" className={styles.logo} />
-            <div className={styles.boxLink}>{companyName}</div>
+            <div className={styles.boxLink}>{companyLink}</div>
           </div>
         </div>
       </FadeInSection>
