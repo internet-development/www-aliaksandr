@@ -11,8 +11,8 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       text: 'Investments',
     },
     {
-      href: '#submit',
-      text: 'Submit',
+      href: '#connect',
+      text: 'Connect',
     },
     {
       href: 'https://www.linkedin.com/in/aliaksandrhudzilin',
@@ -39,8 +39,8 @@ export const FOOTER_CONTENT = {
       text: 'Investments',
     },
     {
-      href: '#submit',
-      text: 'Submit',
+      href: '#connect',
+      text: 'Connect',
     },
     {
       href: 'https://www.linkedin.com/in/aliaksandrhudzilin',

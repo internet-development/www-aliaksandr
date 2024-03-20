@@ -1,10 +1,10 @@
 import Link from './Link';
 import PageGutterWrapper from './PageGutterWrapper';
-import styles from './Submit.module.scss';
+import styles from './Connect.module.scss';
 
 import { FadeInSection } from '@components/FadeInSection';
 
-export default function Submit() {
+export default function Connect() {
   return (
     <PageGutterWrapper>
       <FadeInSection>
@@ -29,7 +29,9 @@ export default function Submit() {
             </div>
             <div className={styles.follow}>
               <div className={styles.followText}>Connect on LinkedIn</div>
-                <a href={'https://www.linkedin.com/in/aliaksandrhudzilin'} className={styles.followbutton}>Connect</a>
+              <a href={'https://www.linkedin.com/in/aliaksandrhudzilin'} className={styles.followbutton}>
+                Connect
+              </a>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import Investments from '@root/components/Investments';
 import Navbar from '@root/components/Navbar';
 import Package from '@root/package.json';
 import styles from '@components/DefaultLayout.module.scss';
-import Submit from '@root/components/Submit';
+import Connect from '@root/components/Connect';
 import Thesis from '@root/components/Thesis';
 
 import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './content/homepage';
@@ -96,7 +96,7 @@ export default async function Page(props) {
       <About />
       <Investments data={data} />
       <Thesis />
-      <Submit />
+      <Connect />
       <Footer navigation={footer} />
     </div>
   );
