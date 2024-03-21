@@ -8,7 +8,7 @@ export default function Connect() {
   return (
     <PageGutterWrapper>
       <FadeInSection>
-        <div className={styles.sectionContainer} id="submit">
+        <div className={styles.sectionContainer} id="connect">
           <div className={styles.submitContainer}>
             <div className={styles.submit}>
               <div className={styles.backgroundImageContainer}>
