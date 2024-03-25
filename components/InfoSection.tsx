@@ -6,12 +6,19 @@ interface InfoSectionProps {
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({ title, content }) => {
+  const paragraphs = content.split('\n\n');
+
   return (
     <div className={styles.container}>
       <span className={styles.title}>{title}</span>
-      <span className={styles.content}>{content}</span>
+      <div className={styles.content}>
+        {paragraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p> // Render each paragraph in a <p> tag
+        ))}
+      </div>
     </div>
   );
 };
+
 
 export default InfoSection;
