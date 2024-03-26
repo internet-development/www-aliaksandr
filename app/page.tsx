@@ -6,6 +6,7 @@ import Hero from '@root/components/Hero';
 import Investments from '@root/components/Investments';
 import Navbar from '@root/components/Navbar';
 import Package from '@root/package.json';
+import Script from 'next/script';
 import styles from '@components/DefaultLayout.module.scss';
 import Connect from '@root/components/Connect';
 import Thesis from '@root/components/Thesis';
@@ -91,6 +92,16 @@ export default async function Page(props) {
 
   return (
     <div className={styles.blockGap}>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-RWF2R28FM2" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-RWF2R28FM2');
+        `}
+      </Script>
       <Navbar navigation={navigation} />
       <Hero />
       <About />
