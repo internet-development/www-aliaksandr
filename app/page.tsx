@@ -92,14 +92,14 @@ export default async function Page(props) {
 
   return (
     <div className={styles.blockGap}>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-RWF2R28FM2" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-9JJVS2TEK3" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'G-RWF2R28FM2');
+          gtag('config', 'G-9JJVS2TEK3');
         `}
       </Script>
       <Navbar navigation={navigation} />
