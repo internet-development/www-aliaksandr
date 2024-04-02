@@ -70,6 +70,7 @@ async function fetchDataFromAPI() {
       'Cache-Control': 'no-store',
     },
     body: JSON.stringify({ site }),
+    next: { revalidate: 3600 },
   });
   const data = await response.json();
   return data;
