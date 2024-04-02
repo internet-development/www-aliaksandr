@@ -67,7 +67,7 @@ async function fetchDataFromAPI() {
     headers: {
       'X-API-KEY': api_key,
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-cache',
+      'Cache-Control': 'no-store',
     },
     body: JSON.stringify({ site }),
   });
@@ -86,6 +86,7 @@ export default async function Page(props) {
     if (response && response.data) {
       data = { companies: response.data };
     }
+    data.companies.forEach(company => console.log(company));
   } catch (e) {
     console.error('Failed to fetch list data:', e.message);
   }
