@@ -87,7 +87,6 @@ export default async function Page(props) {
     if (response && response.data) {
       data = { companies: response.data };
     }
-    data.companies.forEach(company => console.log(company));
   } catch (e) {
     console.error('Failed to fetch list data:', e.message);
   }
