@@ -4,7 +4,6 @@
     align-items: center;
     border: 1px solid var(--color-white);
     border-radius: 8px;
-    // padding: 10px;
 }  
 .box {
     display: grid;
@@ -24,6 +23,10 @@
     z-index: 2;
     pointer-events: none;
     height: 50px;
+    
+    @media (min-width: 769px) {
+        max-width: 200px;
+    }
 }
 
 .backgroundImageContainer {

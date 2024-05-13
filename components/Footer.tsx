@@ -21,7 +21,7 @@ export default function Footer({ navigation }) {
             </Link>
             {navigation?.links && (
               <div className={styles.navLinks}>
-                {navigation.links.slice(0, 3).map((link, index) => {
+                {navigation.links.map((link, index) => {
                   return link.image ? (
                     <Link key={index} href={link.href}>
                       <img src={link.image} alt={link.text} />

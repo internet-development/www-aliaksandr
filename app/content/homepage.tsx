@@ -15,14 +15,8 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       text: 'Connect',
     },
     {
-      href: 'https://www.linkedin.com/in/aliaksandrhudzilin',
-      text: 'LinkedIn',
-      image: '/media/linkedIn.png',
-    },
-    {
-      href: 'https://twitter.com/SashaAngel87',
-      text: 'X',
-      image: '/media/x_small.png',
+      href: 'https://sashapage.substack.com/',
+      text: 'Writings',
     },
   ],
 };
@@ -43,14 +37,8 @@ export const FOOTER_CONTENT = {
       text: 'Connect',
     },
     {
-      href: 'https://www.linkedin.com/in/aliaksandrhudzilin',
-      text: 'LinkedIn',
-      image: '/media/linkedIn.png',
-    },
-    {
-      href: 'https://twitter.com/SashaAngel87',
-      text: 'X',
-      image: '/media/x_small.png',
+      href: 'https://sashapage.substack.com/',
+      text: 'Writings',
     },
   ],
 };

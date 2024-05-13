@@ -198,6 +198,51 @@ function Portcos(props) {
               return (
                 <MonospacePreview
                   key={each.id}
+                  onRefresh={async (file) => {
+                    const confirm = window.confirm(`Are you sure you want to replace ${each.data.src} with another image? This action is irreversible.`);
+                    if (!confirm) {
+                      return;
+                    }
+
+                    const deleteResponse = await onDeleteData({ id: each.id, key });
+                    if (!deleteResponse || deleteResponse.error) {
+                      setModal({
+                        name: 'ERROR',
+                        message: 'Failed to delete the file. Please try again.',
+                      });
+                      return;
+                    }
+
+                    setUploading(true);
+                    const response = await onUploadData({
+                      file,
+                      domain: domain,
+                      key,
+                      setModal,
+                      fields: { site: domain, companyName: each.data.companyName, companyLink: each.data.companyLink },
+                    });
+
+                    if (!response) {
+                      setUploading(false);
+                      return;
+                    }
+
+                    if (response.error) {
+                      setUploading(false);
+                      setModal({ name: 'ERROR', message: response.message });
+                      return;
+                    }
+
+                    const list = await onListData({ key, domain });
+
+                    setUploading(false);
+
+                    if (!list) {
+                      return;
+                    }
+
+                    setFiles(list.data);
+                  }}
                   onDelete={async () => {
                     const confirm = window.confirm(`Are you sure you want to delete ${each.data.src}? This action is irreversible.`);
                     if (!confirm) {
