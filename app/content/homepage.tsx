@@ -15,7 +15,7 @@ export const NAVIGATION_HOMEPAGE_CONTENT = {
       text: 'Connect',
     },
     {
-      href: 'https://sashapage.substack.com/',
+      href: '#writings',
       text: 'Writings',
     },
   ],
@@ -37,7 +37,7 @@ export const FOOTER_CONTENT = {
       text: 'Connect',
     },
     {
-      href: 'https://sashapage.substack.com/',
+      href: '#writings',
       text: 'Writings',
     },
   ],
