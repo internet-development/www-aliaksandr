@@ -10,8 +10,9 @@ import Script from 'next/script';
 import styles from '@components/DefaultLayout.module.scss';
 import Connect from '@root/components/Connect';
 import Thesis from '@root/components/Thesis';
+import Writings from '@root/components/Writings';
 
-import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT } from './content/homepage';
+import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT, BLOG_CONTENT } from './content/homepage';
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
@@ -79,6 +80,7 @@ async function fetchDataFromAPI() {
 export default async function Page(props) {
   const navigation = NAVIGATION_HOMEPAGE_CONTENT;
   const footer = FOOTER_CONTENT;
+  const articles = BLOG_CONTENT.articles;
 
   let data = { companies: [] };
   
@@ -108,6 +110,7 @@ export default async function Page(props) {
       <About />
       <Investments data={data} />
       <Thesis />
+      <Writings articles={articles} />
       <Connect />
       <Footer navigation={footer} />
     </div>
