@@ -199,3 +199,14 @@ export function classNames(...args: any[]): string {
 
   return classes.join(' ');
 }
+
+export async function makeRequest({ endpoint }) {
+  try {
+    const res = await fetch(endpoint, { next: { revalidate: 0 } });
+    const json = await res.json();
+
+    return { ...json };
+  } catch (e) {
+    return console.log(e);
+  }
+}
