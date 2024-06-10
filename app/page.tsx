@@ -15,6 +15,8 @@ import Parser from 'rss-parser';
 
 import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT, BLOG_CONTENT } from './content/homepage';
 
+const filteredPosts = ['https://sashapage.substack.com/p/coming-soon']
+
 interface Article {
   title: string;
   author: string;
@@ -105,15 +107,20 @@ export default async function Page(props) {
   const parser = new Parser();
   const feed = await parser.parseURL('https://sashapage.substack.com/feed');
 
-  feed.items.forEach((item) => {
-    const pubDate = new Date(item.isoDate || '').toDateString();
+  // @(xBalbinus): Sasha has a post called `Coming Soon` that introduces his blog.
+  // We can filter that out.
 
-    articles.push({
-      title: item.title || '',
-      author: item.creator || '',
-      date: pubDate || '',
-      url: item.link || '',
-    });
+  feed.items.forEach((item) => {
+    if (!filteredPosts.includes(item.link || '')) {
+      const pubDate = new Date(item.isoDate || '').toDateString();
+
+      articles.push({
+        title: item.title || '',
+        author: item.creator || '',
+        date: pubDate || '',
+        url: item.link || '',
+      });
+    }
   });
 
   return (
