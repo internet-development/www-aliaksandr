@@ -34,18 +34,6 @@
   margin: 0 auto 48px auto;
 }
 
-.gridAlt {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 1440px;
-  padding: 12px 0px 88px 0px;
-  margin: 0 auto 48px auto;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 24px 0 36px 0;
-}
-
 .button {
   border: 1px solid var(--color-border);
   text-transform: uppercase;
@@ -65,12 +53,15 @@
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
   padding: 24px 0 36px 0;
   width: 100%;
 
   @media (max-width: 768px) {
     display: block;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-border);
   }
 }
 

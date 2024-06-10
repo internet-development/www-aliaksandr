@@ -11,8 +11,16 @@ import styles from '@components/DefaultLayout.module.scss';
 import Connect from '@root/components/Connect';
 import Thesis from '@root/components/Thesis';
 import Writings from '@root/components/Writings';
+import Parser from 'rss-parser';
 
 import { NAVIGATION_HOMEPAGE_CONTENT, FOOTER_CONTENT, BLOG_CONTENT } from './content/homepage';
+
+interface Article {
+  title: string;
+  author: string;
+  date: string;
+  url: string;
+}
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
@@ -77,10 +85,11 @@ async function fetchDataFromAPI() {
   return data;
 }
 
+
 export default async function Page(props) {
   const navigation = NAVIGATION_HOMEPAGE_CONTENT;
   const footer = FOOTER_CONTENT;
-  const articles = BLOG_CONTENT.articles;
+  const articles: Article[] = [];
 
   let data = { companies: [] };
   
@@ -92,6 +101,20 @@ export default async function Page(props) {
   } catch (e) {
     console.error('Failed to fetch list data:', e.message);
   }
+
+  const parser = new Parser();
+  const feed = await parser.parseURL('https://sashapage.substack.com/feed');
+
+  feed.items.forEach((item) => {
+    const pubDate = new Date(item.isoDate || '').toDateString();
+
+    articles.push({
+      title: item.title || '',
+      author: item.creator || '',
+      date: pubDate || '',
+      url: item.link || '',
+    });
+  });
 
   return (
     <div className={styles.blockGap}>
