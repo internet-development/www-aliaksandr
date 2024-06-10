@@ -4,6 +4,7 @@ import Company from './Company';
 import Link from 'next/link';
 import PageGutterWrapper from './PageGutterWrapper';
 import styles from './Writings.module.scss';
+import Script from 'next/script';
 
 import { FadeInSection } from '@components/FadeInSection';
 
@@ -46,10 +47,30 @@ export default function Writings({ articles }) {
       <PageGutterWrapper>
         <FadeInSection>
           <h2 className={styles.h2}>Writings</h2>
-          <div className={styles.grid}>
+          <div className={styles.gridAlt}>
+            {/* 
             {articles?.map((article, index) => {
               return <Post article={article} key={index} />;
             })}
+            */}
+            <div id="substack-feed-embed" >
+              <Script id="substack-feed-embed">
+                {`
+              window.SubstackFeedWidget = {
+                substackUrl: "sashapage.substack.com",
+                posts: 3,
+                filter: "top",
+                hidden: ["reactions", "image"],
+                colors: {
+                  primary: "#FFF6E5",
+                  secondary: "#909090",
+                  background: "#000000",
+                }
+              };
+            `}
+              </Script>
+              <Script src="https://substackapi.com/embeds/feed.js" strategy="lazyOnload" />
+            </div>
           </div>
         </FadeInSection>
       </PageGutterWrapper>
