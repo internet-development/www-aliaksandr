@@ -198,12 +198,13 @@ function Portcos(props) {
               return (
                 <MonospacePreview
                   key={each.id}
+                  itemKey={each.id}
                   onRefresh={async (file) => {
                     const confirm = window.confirm(`Are you sure you want to replace ${each.data.src} with another image? This action is irreversible.`);
                     if (!confirm) {
+                      console.log('Not confirmed');
                       return;
                     }
-
                     const deleteResponse = await onDeleteData({ id: each.id, key });
                     if (!deleteResponse || deleteResponse.error) {
                       setModal({

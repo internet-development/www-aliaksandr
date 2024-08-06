@@ -16,16 +16,17 @@ export default function MonospacePreview(props) {
           <span className={styles.right}>
             <input
               type="file"
-              id="template-form-upload-input"
+              id={`refresh-input-${props.itemKey}`}
               style={{ display: 'none' }}
               onChange={(e) => {
                 e.preventDefault();
                 if (e.target.files && e.target.files[0]) {
                   props.onRefresh(e.target.files[0]);
                 }
+                e.target.value = '';
               }}
             />
-            <label htmlFor="template-form-upload-input">
+            <label htmlFor={`refresh-input-${props.itemKey}`}>
               <Replace width="12px" height="12px" />
             </label>
           </span>
