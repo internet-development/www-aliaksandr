@@ -1,0 +1,51 @@
+.root {
+  background-color: var(--theme-button);
+  color: var(--theme-button-color);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-radius: 8px;
+  outline: 0;
+  border: 0;
+  min-height: 64px;
+  padding: 4px 24px 4px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: var(--theme-button-shadow);
+  transition: 200ms ease all;
+  transform: scale(1);
+  text-decoration: none;
+}
+
+.root:visited {
+  color: var(--theme-button-color);
+}
+
+.root:hover {
+  box-shadow: var(--theme-button-shadow-hover);
+}
+
+.loader {
+  color: var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-border);
+  flex-shrink: 0;
+  border-radius: 8px;
+  outline: 0;
+  border: 0;
+  min-height: 64px;
+  padding: 4px 24px 4px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: wait;
+  transition: 200ms ease all;
+  transform: scale(1);
+  text-decoration: none;
+}

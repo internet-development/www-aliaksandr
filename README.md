@@ -1,54 +1,14 @@
-# NEXTJS-SASS-STARTER
+# sasha.page
 
-**[Live Demo](https://wireframes.internet.dev)**
+The personal site of Aliaksandr "Sasha" Hudzilin — angel investor, co-founder of NEAR Protocol — showcasing his background, investment thesis, portfolio companies, and writings from [sashapage.substack.com](https://sashapage.substack.com).
 
-Our extensive experience in building numerous websites has led us to create this template repository as an efficient starting point. If you're keen on developing websites alongside the [Internet Development Studio Company](https://internet.dev), we highly recommend utilizing this template as your foundation.
+Built with Next.js, TypeScript, and CSS Modules.
 
-Why would I use this?
-
-- **Jumpstart Your Project** → Leverage the power of TypeScript, SASS, and NextJS to quickly get your project off the ground.
-- **Template Efficiency** → Streamline your development process by using a pre-configured template.
-- **Speed and Simplicity** → Ideal for rapid website creation without compromising on quality.
-- **Learning Opportunity** → If you're delving into web development, perhaps under the guidance of [@wwwjim](https://x.com/wwwjim), this template is a perfect starting point. Enhance your learning experience by exploring the [issues section](https://github.com/internet-development/nextjs-sass-starter/issues?q=is%3Aissue+is%3Aopen+label%3ADocumentation), which includes helpful documentation.
-
-### Setup (MacOS)
-
-Start by cloning the repository, or by clicking on **Use this template** above.
-
-You will have wanted to setup your development environment by following steps [here](https://github.com/internet-development/nextjs-sass-starter/issues/3).
-
-Then run the server
+## Running locally
 
 ```sh
 npm install
 npm run dev
 ```
 
-Go to `http://localhost:10000` in your browser of choice.
-
-Enjoy! The template uses `10000` as our `port` for more compatibility with [Render.com](https://render.com)
-
-### Scripts (Optional)
-
-If you need to run node script without running the server, use this example to get started
-
-```sh
-npm run script example
-```
-
-### Env Variables (Optional)
-
-If you want to connect to a Postgres database, provide the following `.env` file. `5432` is the default Postgres port and should not be confused with the `PORT=` for [Render.com](https://render.com).
-
-```sh
-PORT=10000
-DATABASE_NAME=xxxx
-DATABASE_USERNAME=xxxx
-DATABASE_HOST=xxxx
-DATABASE_PORT=5432
-DATABASE_PASSWORD=xxxx
-```
-
-### Contact
-
-If you have questions ping me on Twitter, [@wwwjim](https://www.twitter.com/wwwjim). Or you can ping [@internetxstudio](https://x.com/internetxstudio).
+Then open [http://localhost:10000](http://localhost:10000).

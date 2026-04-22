@@ -1,4 +1,4 @@
-import styles from './InfoSection.module.scss';
+import styles from './InfoSection.module.css';
 
 interface InfoSectionProps {
   title: string;

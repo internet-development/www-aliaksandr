@@ -1,0 +1,169 @@
+.heroContainer {
+    background-color: black;
+    position: relative;
+    color: var(--color-white);
+}
+
+.heroImage {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    background-color: var(--color-black);
+}
+
+@media (max-width: 1068px) {
+    .heroImage {
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroImage {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.textContainer {
+    background-color: var(--color-black);
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 6rem;
+    font-size: 6rem;
+    color: var(--color-white);
+    font-family: 'EB-Garamond-Italic';
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.125rem;
+}
+
+@media (max-width: 1440px) {
+    .textContainer {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    .textContainer {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+
+@media (max-width: 1068px) {
+    .textContainer {
+        font-size: 3rem;
+        line-height: 3rem;
+        position: relative;
+        display: flex;
+        font-style: none;
+        letter-spacing: 0rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        left: 0%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .textContainer {
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+
+.heroSection {
+    font-family: "EB-Garamond-BoldItalic";
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1440px) {
+    .heroSection {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 1068px) {
+    .heroSection {
+        align-items: center;
+    }
+}
+
+.mainHeroTitle {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--color-black);
+}
+
+.title {
+    font-size: 6rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    display: block;
+    font-family: 'Inferi-Medium';
+    background-color: var(--color-black);
+}
+
+@media (max-width: 1334px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 1160px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 1068px) {
+    .title {
+        font-size: 4rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 3rem;
+        line-height: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        text-align: center;
+    }
+}
+
+.content {
+    padding-right: 10%;
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+}
+
+@media (max-width: 1068px) {
+    .content {
+        gap: 2rem;
+        flex-direction: column;
+        height: 100%;
+        padding-top: 0.2rem;
+    }
+}

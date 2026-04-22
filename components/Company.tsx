@@ -1,4 +1,4 @@
-import styles from './Company.module.scss';
+import styles from './Company.module.css';
 import Link from './Link';
 
 import { FadeInSection } from '@components/FadeInSection';

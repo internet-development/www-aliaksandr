@@ -2,7 +2,7 @@
 
 import Company from './Company';
 import PageGutterWrapper from './PageGutterWrapper';
-import styles from './Investments.module.scss';
+import styles from './Investments.module.css';
 
 import { FadeInSection } from '@components/FadeInSection'
 
@@ -27,7 +27,7 @@ export default function Investments({ data }) {
         <div className={styles.boxes}>
           {data.companies.map((company, index) => {
             return <Company
-              key={company.companyName}
+              key={company.id ?? company.data.companyName}
               companyLink={company.data.companyLink}
               companyName={company.data.companyName}
               companyLogo={company.data.src}

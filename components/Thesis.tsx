@@ -1,6 +1,6 @@
 import InfoSection from './InfoSection';
 import PageGutterWrapper from './PageGutterWrapper';
-import styles from './Thesis.module.scss';
+import styles from './Thesis.module.css';
 
 import { FadeInSection } from '@components/FadeInSection';
 

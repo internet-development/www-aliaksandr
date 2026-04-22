@@ -1,0 +1,36 @@
+.body {
+  font-size: 2rem;
+  padding: 24px;
+}
+
+.pixel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.blockGap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--color-black);
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .blockGap {
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .blockGap {
+    row-gap: 2rem;
+  }
+}

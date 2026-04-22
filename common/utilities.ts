@@ -1,31 +1,9 @@
 const hasOwn = {}.hasOwnProperty;
-const localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
-const nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
-const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
-
-export function noop() {
-  return null;
-}
-
-export function pluralize(text: string, count: number) {
-  return count > 1 || count === 0 ? `${text}s` : text;
-}
-
-export function getOrdinalNumber(n) {
-  return n + (n > 0 ? ['th', 'st', 'nd', 'rd'][(n > 3 && n < 21) || n % 10 > 3 ? 0 : n % 10] : '');
-}
 
 export function onHandleThemeChange() {
   const body = document.body;
   const isLight = body.classList.contains('theme-light');
   return isLight ? body.classList.replace('theme-light', 'theme-dark') : body.classList.replace('theme-dark', 'theme-light');
-}
-
-export function formatDollars(value: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  }).format(value);
 }
 
 export function calculatePositionWithGutter(rect, objectWidth, viewportWidth, gutter = 24) {
@@ -36,48 +14,7 @@ export function calculatePositionWithGutter(rect, objectWidth, viewportWidth, gu
   return { top, right: adjustedRight, side };
 }
 
-export function toDateISOString(data: string) {
-  const date = new Date(data);
-  const dayOfWeek = date.toLocaleDateString('en-US', {
-    weekday: 'long',
-  });
-  const month = date.toLocaleDateString('en-US', {
-    month: 'long',
-  });
-  const dayOfMonth = getOrdinalNumber(date.getDate());
-  const year = date.getFullYear();
-
-  const formattedDate = `${dayOfWeek}, ${month} ${dayOfMonth}, ${year}`;
-
-  return formattedDate;
-}
-
-export function elide(string, length = 140, emptyState = '...') {
-  if (isEmpty(string)) {
-    return emptyState;
-  }
-
-  if (string.length < length) {
-    return string.trim();
-  }
-
-  return `${string.substring(0, length)}...`;
-}
-
-export function bytesToSize(bytes: number, decimals: number = 2) {
-  if (bytes === 0) return '0 Bytes';
-
-  const k = 1000;
-  const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-
-  return `${(bytes / Math.pow(k, i)).toFixed(dm)} ${sizes[i]}`;
-}
-
 export function isEmpty(text: any) {
-  // NOTE(jim): If a number gets passed in, it isn't considered empty for zero.
   if (text === 0) {
     return false;
   }
@@ -97,73 +34,6 @@ export function isEmpty(text: any) {
   text = text.toString();
 
   return Boolean(!text.trim());
-}
-
-export function createSlug(text: any) {
-  if (isEmpty(text)) {
-    return 'untitled';
-  }
-
-  const a = 'æøåàáäâèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;';
-  const b = 'aoaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------';
-  const p = new RegExp(a.split('').join('|'), 'g');
-
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, (c) => b.charAt(a.indexOf(c))) // Replace special chars
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, ''); // Trim - from end of text
-}
-
-export function isUrl(string: any) {
-  if (typeof string !== 'string') {
-    return false;
-  }
-
-  let match = string.match(protocolAndDomainRE);
-  if (!match) {
-    return false;
-  }
-
-  let everythingAfterProtocol = match[1];
-  if (!everythingAfterProtocol) {
-    return false;
-  }
-
-  if (localhostDomainRE.test(everythingAfterProtocol) || nonLocalhostDomainRE.test(everythingAfterProtocol)) {
-    return true;
-  }
-
-  return false;
-}
-
-export function debounce<Args extends unknown[]>(fn: (...args: Args) => void, delay: number) {
-  let timeoutID: number | undefined;
-  let lastArgs: Args | undefined;
-
-  const run = () => {
-    if (lastArgs) {
-      fn(...lastArgs);
-      lastArgs = undefined;
-    }
-  };
-
-  const debounced = (...args: Args) => {
-    clearTimeout(timeoutID);
-    lastArgs = args;
-    timeoutID = window.setTimeout(run, delay);
-  };
-
-  debounced.flush = () => {
-    clearTimeout(timeoutID);
-  };
-
-  return debounced;
 }
 
 export function classNames(...args: any[]): string {
@@ -198,15 +68,4 @@ export function classNames(...args: any[]): string {
   }
 
   return classes.join(' ');
-}
-
-export async function makeRequest({ endpoint }) {
-  try {
-    const res = await fetch(endpoint, { next: { revalidate: 0 } });
-    const json = await res.json();
-
-    return { ...json };
-  } catch (e) {
-    return console.log(e);
-  }
 }

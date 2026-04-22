@@ -1,4 +1,4 @@
-import styles from './About.module.scss';
+import styles from './About.module.css';
 import InfoSection from './InfoSection';
 import PageGutterWrapper from './PageGutterWrapper';
 import { FadeInSection } from './FadeInSection';

@@ -1,0 +1,155 @@
+.navbarContainer {
+    background-color: var(--color-black);
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 0px 36px 0px;
+    margin-bottom: 7px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+    }
+}
+
+.applyLink {
+    color: var(--color-grey);
+    font-family: "SF-Pro-Display-Regular";
+    text-align: center;
+}
+
+@media (max-width: 1068px) {
+    .applyLink {
+        display: none;
+    }
+}
+
+.submitFormButton {
+    background-color: var(--color-black);
+    border: 2px solid var(--color-yellow);
+    color: var(--color-yellow);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-family: "SF-Pro-Display-Regular";
+    font-size: 1rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+@media (pointer: fine) {
+    .submitFormButton:hover {
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+    }
+}
+
+@media (max-width: 1068px) {
+    .submitFormButton {
+        display: none;
+    }
+}
+
+.joinPortfolioButton {
+    display: none;
+}
+
+@media (max-width: 1068px) and (min-width: 748px) {
+    .joinPortfolioButton {
+        display: block;
+        background-color: var(--color-black);
+        border: 2px solid var(--color-yellow);
+        color: var(--color-yellow);
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        font-family: "SF-Pro-Display-Regular";
+        font-size: 1rem;
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+}
+
+.joinPortfolioLink {
+    display: none;
+}
+
+@media (max-width: 1068px) {
+    .joinPortfolioLink {
+        display: block;
+    }
+}
+
+/* Animations should come in sequentially */
+.navLinks,
+.socialLinks {
+    font-family: "SF-Pro-Display-Regular";
+    display: flex;
+    gap: 2.75rem;
+    font-size: 20px;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .navLinks,
+    .socialLinks {
+        font-size: 1.25rem;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .navLinks,
+    .socialLinks {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 1050px) {
+    .socialLinks {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .socialLinks {
+        display: none;
+    }
+}
+
+.socialImage {
+    color: var(--color-white);
+    transition: 0.3s ease;
+    margin-top: 4px;
+}
+
+@media (pointer: fine) {
+    .socialImage:hover {
+        color: var(--color-grey);
+    }
+}
+
+.link {
+    color: var(--color-white);
+    transition: 0.3s ease;
+}
+
+@media (pointer: fine) {
+    .link:hover {
+        color: var(--color-grey);
+    }
+}

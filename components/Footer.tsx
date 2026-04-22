@@ -1,4 +1,4 @@
-import styles from './Footer.module.scss';
+import styles from './Footer.module.css';
 
 import React from 'react';
 import Link from './Link';

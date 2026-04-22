@@ -1,4 +1,4 @@
-import styles from '@components/DefaultLayout.module.scss';
+import styles from '@components/DefaultLayout.module.css';
 
 import Head from 'next/head';
 

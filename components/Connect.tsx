@@ -1,6 +1,6 @@
 import Link from './Link';
 import PageGutterWrapper from './PageGutterWrapper';
-import styles from './Connect.module.scss';
+import styles from './Connect.module.css';
 
 import { FadeInSection } from '@components/FadeInSection';
 

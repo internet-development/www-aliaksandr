@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@components/FadeInSection.module.scss";
+import styles from "@components/FadeInSection.module.css";
 import { useEffect, useRef, useState } from "react";
 
 export function FadeInSection(props) {

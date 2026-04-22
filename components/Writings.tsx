@@ -1,10 +1,8 @@
 'use client';
 
-import Company from './Company';
 import Link from 'next/link';
 import PageGutterWrapper from './PageGutterWrapper';
-import styles from './Writings.module.scss';
-import Script from 'next/script';
+import styles from './Writings.module.css';
 
 import { FadeInSection } from '@components/FadeInSection';
 

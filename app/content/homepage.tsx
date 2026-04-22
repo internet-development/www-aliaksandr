@@ -1,5 +1,3 @@
-import LinkedInSVG from '@root/components/svgs/LinkedInSVG';
-
 export const NAVIGATION_HOMEPAGE_CONTENT = {
   links: [
     {
@@ -39,17 +37,6 @@ export const FOOTER_CONTENT = {
     {
       href: '#writings',
       text: 'Writings',
-    },
-  ],
-};
-
-export const BLOG_CONTENT = {
-  articles: [
-    {
-      title: 'Connecting the Dots',
-      author: 'SASHA',
-      date: 'May 10, 2024',
-      url: 'https://sashapage.substack.com/p/connecting-the-dots',
     },
   ],
 };

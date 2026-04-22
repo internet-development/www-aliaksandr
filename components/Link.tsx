@@ -1,4 +1,4 @@
-import styles from '@components/Link.module.scss';
+import styles from '@components/Link.module.css';
 
 import { ReactNode } from 'react';
 

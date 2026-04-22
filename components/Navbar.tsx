@@ -1,4 +1,4 @@
-import styles from './Navbar.module.scss';
+import styles from './Navbar.module.css';
 
 import React from 'react';
 import Link from './Link';

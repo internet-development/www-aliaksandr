@@ -1,11 +1,10 @@
-import styles from '@system/MonospacePreview.module.scss';
+import styles from '@system/MonospacePreview.module.css';
 
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
 import Cross from '@system/svg/Cross';
 import Replace from '@system/svg/Replace';
-import Caret from '@system/svg/Caret';
 
 export default function MonospacePreview(props) {
   return (

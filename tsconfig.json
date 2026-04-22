@@ -2,16 +2,28 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@root/*": ["./*"],
-      "@system/*": ["./system/*"],
-      "@common/*": ["./common/*"],
-      "@data/*": ["./data/*"],
-      "@components/*": ["./components/*"],
-      "@pages/*": ["./pages/*"],
-      "@modules/*": ["./modules/*"]
+      "@root/*": [
+        "./*"
+      ],
+      "@system/*": [
+        "./system/*"
+      ],
+      "@common/*": [
+        "./common/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ]
     },
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -19,10 +31,10 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -31,6 +43,15 @@
     ],
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "**/*.spec.ts"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ]
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './Hero.module.scss';
+import styles from './Hero.module.css';
 import PageGutterWrapper from './PageGutterWrapper';
 import React from 'react';
 
