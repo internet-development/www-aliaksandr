@@ -5,7 +5,7 @@
     "node": ">=20.9.0"
   },
   "license": "MIT",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "scripts": {
     "dev": "next -p 10000",
     "build": "next build",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "js-cookie": "^3.0.8",
-    "next": "16.4.3",
+    "next": "16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

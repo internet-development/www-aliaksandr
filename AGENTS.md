@@ -24,7 +24,7 @@ Imports use the `@root`, `@system`, `@common`, `@components`, and `@pages` alias
 
 - `npm run build` compiles and type-checks. It can rewrite the tracked `next-env.d.ts`.
 - `npx tsc --noEmit` type-checks alone. It rewrites the tracked `tsconfig.tsbuildinfo`.
-- `npm audit` and `npm outdated` check dependencies.
+- `npm audit` and `npm outdated` check dependencies. `npm audit` needs the ignored `package-lock.json` that `npm install` writes.
 
 There is no test suite or linter. Port 10000 may be in use by another project, so run servers on a free port and stop only the process you started.
 
